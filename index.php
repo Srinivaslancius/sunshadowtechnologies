@@ -28,37 +28,10 @@
         <div class="tp-banner-container">
             <div class="tp-banner">
                 <ul>
-                	
+                	<?php $getBannersData = getAllDataCheckActive('banners',0);  ?>
+                    <?php while ($row = $getBannersData->fetch_assoc()) { ?>
                     <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/slides/1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="images/slides/1.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-                    
-                    
-                    <div class="tp-caption sfl sfb tp-resizeme"
-                    data-x="left" data-hoffset="15"
-                    data-y="center" data-voffset="-150"
-                    data-speed="1500"
-                    data-start="500"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="circular-drop">0<sub>2</sub></div></div>
-                    
-                    <div class="tp-caption sfr sfb tp-resizeme"
-                    data-x="left" data-hoffset="90"
-                    data-y="center" data-voffset="-50"
-                    data-speed="1500"
-                    data-start="1000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h1><span class="normal-font">SAMPLE</span> HEADING</h1></div>
-                    
+                    <img src="<?php echo $base_url . 'uploads/banner_images/'.$row['banner'] ?>"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
                     <div class="tp-caption sfl sfb tp-resizeme"
                     data-x="left" data-hoffset="90"
                     data-y="center" data-voffset="40"
@@ -71,19 +44,6 @@
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
                     data-endeasing="Power4.easeIn"><h3 class="bg-color">The Energy Saving ECO COATING</h3></div>
-                    
-                    <div class="tp-caption sfl sfb tp-resizeme"
-                    data-x="left" data-hoffset="90"
-                    data-y="center" data-voffset="110"
-                    data-speed="1500"
-                    data-start="2000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="text">Lorem ipsum dolor sit amet, debet dolore mollis his ad, ea usu <br>soleat detraxit.In vix agam moderatius. Modo partiendo.</div></div>
                     
                     <div class="tp-caption sfr sfb tp-resizeme"
                     data-x="left" data-hoffset="90"
@@ -99,80 +59,7 @@
                     data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a></div>
                     
                     </li>
-                    
-                    
-                    
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/slides/3.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="images/slides/3.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-                    
-                    
-                    <div class="tp-caption sfl sfb tp-resizeme"
-                    data-x="left" data-hoffset="15"
-                    data-y="center" data-voffset="-150"
-                    data-speed="1500"
-                    data-start="500"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="circular-drop">0<sub>2</sub></div></div>
-                    
-                    <div class="tp-caption sfr sfb tp-resizeme"
-                    data-x="left" data-hoffset="90"
-                    data-y="center" data-voffset="-50"
-                    data-speed="1500"
-                    data-start="1000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h1><span class="normal-font">SAMPLE</span> HEADING</h1></div>
-                    
-                    <div class="tp-caption sfl sfb tp-resizeme"
-                    data-x="left" data-hoffset="90"
-                    data-y="center" data-voffset="40"
-                    data-speed="1500"
-                    data-start="1500"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h3 class="bg-color">The Energy Saving ECO COATING</h3></div>
-                    
-                    <div class="tp-caption sfl sfb tp-resizeme"
-                    data-x="left" data-hoffset="90"
-                    data-y="center" data-voffset="110"
-                    data-speed="1500"
-                    data-start="2000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="text">Lorem ipsum dolor sit amet, debet dolore mollis his ad, ea usu <br>soleat detraxit.In vix agam moderatius. Modo partiendo.</div></div>
-                    
-                    <div class="tp-caption sfr sfb tp-resizeme"
-                    data-x="left" data-hoffset="90"
-                    data-y="center" data-voffset="190"
-                    data-speed="1500"
-                    data-start="2000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a></div>
-                    
-                    </li>                
-                    
+                    <?php } ?>
                 </ul>
                 
             </div>
