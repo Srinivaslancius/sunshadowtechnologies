@@ -9,7 +9,6 @@ if (!isset($_POST['submit']))  {
     $industry_id = $_POST['industry_id'];
     $status = $_POST['status'];
     $created_at = date("Y-m-d h:i:s");
-    $t = time();
     
     //save product images into product_images table    
     
@@ -20,11 +19,11 @@ if (!isset($_POST['submit']))  {
     $product_images = $_FILES['product_images']['name'];
     foreach($product_images as $key=>$value){
 
-        $product_images1 = time().'_'.$_FILES['product_images']['name'][$key];
+        $product_images1 = $_FILES['product_images']['name'][$key];
         $file_tmp = $_FILES["product_images"]["tmp_name"][$key];
         $file_destination = '../uploads/case_studies_images/' . $product_images1;
         move_uploaded_file($file_tmp, $file_destination);        
-        $sql = "INSERT INTO industry_images ( `industry_id`,`industry_image`) VALUES ('$last_id','$product_images1')";
+        $sql = "INSERT INTO industry_images ( `industry_id`,`industry_images`) VALUES ('$last_id','$product_images1')";
         $result = $conn->query($sql);
     }
     
@@ -102,37 +101,7 @@ if (!isset($_POST['submit']))  {
     CKEDITOR.replace( 'product_info' );
 </script>
 
-<!-- <script type="text/javascript">
-$(document).ready(function() {
-var abc = 0;
-    $('#add_more').click(function () {
-        $(this).before("<div><input type='file' id='file' name='product_images[]' accept='image/*'required><a href='#' class='remove_field'>Remove</a> </div>");
-    });
-    $(this).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-  });
-</script> -->
-<!--Multiple images script end here -->
 <script type="text/javascript">
-
-$(document).ready(function() {
-
-    //Change price type starts here
-    
-    //End
-    //Check validation for prodcut price empty or not and calaculate selling price
-    
-    //End
-    
-    //End date should be greater than Start date
-    
-    
-   //Minimum order quantity should be less than quantity
-   
-    
-   
-  });
 function getSubCategories(val) {
     $.ajax({
     type: "POST",

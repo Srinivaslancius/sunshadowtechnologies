@@ -12,21 +12,21 @@
 
 <body>
 <div class="page-wrapper">
- 	
+    
     <!-- Preloader -->
   
     
- 	
+    
     <!-- Main Header -->
     <header class="main-header">
-    	<?php include_once 'menu.php';?>
+        <?php include_once 'menu.php';?>
     </header><!--End Main Header -->
     
     
     <!--Page Title-->
     <section class="page-title" style="background-image:url(images/slides/4.jpg);">
-    	<div class="auto-container">
-        	<div class="sec-title">
+        <div class="auto-container">
+            <div class="sec-title">
                 <h1>Our <span class="normal-font">Case Studies</span></h1>
                 <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">case studies</a></div>
             </div>
@@ -175,11 +175,11 @@
     </section>
         
     <section class="events-section latest-events" style="margin-top:-100px">
-    	<?php include_once 'latest_news.php';?>
+        <?php include_once 'latest_news.php';?>
     </section>
      <section class="blog-news-section latest-news" style="margin-top:-150px">
-    	<?php include_once 'our_clients.php';?>
-    </section>	
+        <?php include_once 'our_clients.php';?>
+    </section>  
     <!--Sponsors Section-->
   <section class="sponsors-section" style="margin-top:-100px">
        <?php include_once 'green_marks.php';?>
@@ -187,15 +187,15 @@
     
     <!--Parallax Section-->
   <section class="parallax-section" style="background-image:url(images/slides/4.jpg);">
-    	 <?php include_once 'parallax.php';?>   
+         <?php include_once 'parallax.php';?>   
     </section>
     
     
     <!--Intro Section-->
     <section class="subscribe-intro">
-    	<?php include_once 'newsletter.php';?>
+        <?php include_once 'newsletter.php';?>
     </section>
-	
+    
     
     <!--Main Footer-->
     <footer class="main-footer" style="background-image:url(images/background/footer-bg.jpg);">

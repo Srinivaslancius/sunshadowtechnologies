@@ -119,151 +119,28 @@ if (!isset($_POST['submit']))  {
     CKEDITOR.replace( 'product_info' ); 
 </script>
 
-<!-- <script type="text/javascript">
-$(document).ready(function() {
-var abc = 0;
-    $('#add_more').click(function () {
-        $(this).before("<div><input type='file' id='file' name='product_images[]' accept='image/*'required><a href='#' class='remove_field'>Remove</a> </div>");
-    });
-    $(this).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-  });
-</script> -->
-<!--Multiple images script end here -->
-<script type="text/javascript">
-
-$(document).ready(function() {
-
-    //Change price type starts here
-    $("#price_type").change(function () {
-        if ($(this).val() == 1) {
-            $(".show_price").show();
-            $('.price_change_text').html('Enter Discount Price');
-        } else if($(this).val() == 2) {
-            $(".show_price").show();
-            $('.price_change_text').html('Enter Offer Percentage');
-        } else {
-            $(".show_price").hide();
-        }
-        $('#offer_price, #selling_price').val('');
-    });
-    //End
-    //Check validation for prodcut price empty or not and calaculate selling price
-    $('#offer_price').keyup(function() {
-        if($('#product_price').val()==''){
-            alert("Please Enter Product Price");
-            $('#offer_price').val('');
-            return false;
-        } else if($('#price_type').val() == 1) {
-            calcPrice = ($('#product_price').val() - $('#offer_price').val());
-        } else if($('#price_type').val() == 2) {
-            calcPrice = $('#product_price').val() - ( ($('#product_price').val()/100) * $('#offer_price').val());
-            if (parseInt($('#offer_price').val())>99) {
-                alert("Please enter the percentage less than 100 ");
-                $('#selling_price').val('');
-                $('#offer_price').val('');
-                return false;
-            };
-        }
-        discountPrice = calcPrice.toFixed(2);
-        $('#selling_price').val(discountPrice);
-        if(parseInt($('#offer_price').val()) > parseInt($('#product_price').val())) {
-            alert("Please Enter Discount value less than Product Price");
-            $('#selling_price').val('');
-            $('#offer_price').val('');
-        }
-    });
-    //End
-    
-    //End date should be greater than Start date
-    $("#deal_end_date").change(function () {
-        var startDate = document.getElementById("deal_start_date").value;
-        if ($('#deal_start_date').val()=='') {
-        alert("Please Enter Deal Start date");
-        document.getElementById("deal_end_date").value = "";
-    };
-        var endDate = document.getElementById("deal_end_date").value;
-     
-        if ((Date.parse(endDate) <= Date.parse(startDate))) {
-            alert("Deal End date should be greater than Deal Start date");
-            document.getElementById("deal_end_date").value = "";
-        }
-    });
-    
-   //Minimum order quantity should be less than quantity
-   $("#minimum_order_quantity").keyup(function () {
-        if($('#quantity').val()==''){
-            alert("Please Enter Quantity");
-            $('#minimum_order_quantity, #quantity').val('');
-        } else {
-            if(parseInt($('#minimum_order_quantity').val()) > parseInt($('#quantity').val())) {
-                alert("The quantity value must be larger than the minimum quantity");
-                $('#minimum_order_quantity').val('');
-                return false;
-            }
-        }
-   });
-   var max_fields_limit      = 10; //set limit for maximum input fields
-    var x = 1; //initialize counter for text box
-    $('.add_more_button').click(function(e){ //click event on add more fields button having class add_more_button
-        e.preventDefault();
-        if(x < max_fields_limit){ //check conditions
-            x++; //counter increment
-            $('.input_fields_container').append('<div><label for="form-control-2" class="control-label">Specifications</label><input type="text" name="specifications[]" class="form-control" id="specifications" placeholder="Specifications" data-error="Please enter Specifications" required><a href="#" class="remove_field" style="margin-left:10px;">Remove</a></div>'); //add input field
-        }
-    });  
-    $('.input_fields_container').on("click",".remove_field", function(e){ //user click on remove text links
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    });
-   
-  });
-function getSubCategories(val) {
-    $.ajax({
-    type: "POST",
-    url: "get_sub_categories.php",
-    data:'category_id='+val,
-    success: function(data){
-        $("#sub_category_id").html(data);
-    }
-    });
-}
-</script>
 <script type="text/javascript">
 $(function(){
     $(document).on('click','.ajax_img_del',function(){
-
-        var divOldLength = $(".form-group > img").length;
-        var divNewLength = $(".abcd > img").length;
-
-        if(divOldLength == '1' && divNewLength=='0')  {
-          alert("Require at lease one image!");
-          return false;
-        } else {
-          var del_id= $(this).attr('id');
-          var $ele = $(this).parent().parent();
-          var r = confirm("Are you sure you want to delete?");
-          if(r == true){
-          $.ajax({
-              type:'POST',
-              url:'delete_image.php',
-              data:{'del_id':del_id},
-              success: function(data){    
-                   if(data=="YES"){
-                     //location.reload();
-                     $("#output_"+del_id).remove();
-                     $('a#'+del_id).remove();
-                   }else{
-                      alert("Deleted Failed");  
-                  }
-               }
-
-             });
-           } else{
-              //location.reload();
-           }
-        }
-        
+        var del_id= $(this).attr('id');
+        var $ele = $(this).parent().parent();
+        var del_confirm = confirm("Are you sure you want to delete?");
+        if(del_confirm == true){
+        $.ajax({
+            type:'POST',
+            url:'delete_image.php',
+            data:{'del_id':del_id},
+            success: function(data){
+                 if(data=="YES"){
+                    location.reload();
+                 }else{
+                    alert("Deleted Failed");  
+                 }
+             }
+        });
+        }else{
+            location.reload();
+         }
     });
 });
 function getSubCategories(val) {
