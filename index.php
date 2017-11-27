@@ -206,20 +206,21 @@
     
     <!--Featured Fluid Section-->
     <section class="featured-fluid-section">
-    	
+    	<?php $getContentData = getAllDataCheckActive1('content_pages','0',14);
+        $getData = $getContentData->fetch_assoc(); ?>
         
     	<div class="outer clearfix">
             
             <!--Image Column-->
-            <div class="image-column" style="background-image:url(images/slides/4.jpg);"></div>
+            <div class="image-column" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>);"></div>
             
             <!--Text Column-->
             <article class="column text-column dark-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image:url(images/resource/fluid-image-2.jpg);">
                 
                 <div class="content-box pull-left">	
-                    <h2>The <span class="theme_color"> Energy Saving</span> &amp; Eco Coating</h2>
+                    <h2> <span class="theme_color"><?php echo $getData['title']; ?></span> </h2>
                 <!--	<div class="title-text">Lorem ipsum dolor <a href="#"><strong>some link</strong></a> sit amet, cum at inani interesset </div>-->
-                    <div class="text">Lorem ipsum dolor sit amet, eu qui modo expetendis reformidans ex sit set appetere sententiae seo eum in simul homero. Duo consul lorem probatus no qu alterum sit at no simple dummy.<br> Lorem ipsum dolor sit amet, eu qui modo expetendis reformidans ex sit set appetere sententiae seo eum in simul homero. Duo consul lorem probatus no qu alterum sit at no simple dummy.<br> Lorem ipsum dolor sit amet, eu qui modo expetendis reformidans ex sit set appetere sententiae seo eum in simul homero. Duo consul lorem probatus no qu alterum sit at no simple dummy.</div>
+                    <div class="text"><?php echo substr(strip_tags($getData['description']), 0,150);?></div>
 					
                 <!--    <a href="#" class="theme-btn btn-style-one">Join Now</a>
                     <a href="#" class="theme-btn btn-style-two">View details</a>-->
@@ -247,18 +248,22 @@
         	
             
             <article class="column left-column" style="background-image:url(images/resource/fluid-image-3.jpg);">
-                
+                <?php $getContentData11 = getAllDataCheckActive1('content_pages','0',15);
+                    $getData11 = $getContentData11->fetch_assoc(); ?>
                 <div class="content-box pull-right">	
-                    <h2>Some <span class="normal-font theme_color">Facts</span></h2>
-                    <div class="title-text">Lorem ipsum dolor some link sit amet, cum at inani interesset</div>
-                    <div class="text">We’re extremely proud of what we’ve achieved together with charitie lorem individuals, philanthropists and schools since the Big Give was founded in 2007, and here are some fact from our achivemnet.</div>
+                    <h2><span class="normal-font theme_color"><?php echo $getData11['title']; ?></span></h2>
+                    <!-- <div class="title-text">Lorem ipsum dolor some link sit amet, cum at inani interesset</div> -->
+                    <div class="text"><?php echo substr(strip_tags($getData11['description']), 0,150);?></div>
                     <br>
-                    
+                    <?php 
+                    $getAllSiteSettingsData = getAllData('site_settings');
+                    $getSiteSettingsData = $getAllSiteSettingsData->fetch_assoc();
+                    /*echo $getSiteSettingsData; die;*/ ?> 
                     <div class="clearfix">
                     	<div class="icon-box">
                         	<div class="icon"><span class="flaticon-shapes-1"></span></div>
                             <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="7845910" data-speed="1500">7,845,910</span></h4>
+                            	<h4>$<span class="count-text" data-stop="7845910" data-speed="1500"><?php echo $getSiteSettingsData['credit_count']; ?></span></h4>
                                 <span class="title">Raised</span>
                             </div>
                         </div>
@@ -266,7 +271,7 @@
                         <div class="icon-box">
                         	<div class="icon"><span class="flaticon-tool-4"></span></div>
                             <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="13360" data-speed="1500">12,360</span></h4>
+                            	<h4>$<span class="count-text" data-stop="13360" data-speed="1500"><?php echo $getSiteSettingsData['project_count']; ?></span></h4>
                                 <span class="title">Projects</span>
                             </div>
                         </div>
@@ -274,7 +279,7 @@
                         <div class="icon-box">
                         	<div class="icon"><span class="flaticon-favorite"></span></div>
                             <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="78459" data-speed="1500">225,580</span></h4>
+                            	<h4>$<span class="count-text" data-stop="78459" data-speed="1500"><?php echo $getSiteSettingsData['likes_count']; ?></span></h4>
                                 <span class="title">Donations</span>
                             </div>
                         </div>
@@ -283,24 +288,27 @@
                 
                 <div class="clearfix"></div>
             </article>
-            
-            <article class="column right-column" style="background-image:url(images/resource/fluid-image-4.jpg);">
+            <?php $getContentData12 = getAllDataCheckActive1('content_pages','0',16);
+                    $getData12 = $getContentData12->fetch_assoc(); ?>
+            <?php $getContentData13 = getAllDataCheckActive1('content_pages','0',17);
+                    $getData13 = $getContentData13->fetch_assoc(); ?>
+            <article class="column right-column" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getData12['image'] ?>););">
                 
                 <div class="content-box pull-left">	
                 	<div class="outer-box">
                     	<div class="quote-icon"><span class="fa fa-quote-left"></span></div>
-                        <h2>word from <span class="normal-font">CEO</span></h2>
+                        <h2><?php echo $getData12['title']; ?><span class="normal-font"></span></h2>
                         
                         <!--Text Content-->
                         <div class="text-content">
-                            <div class="text"><p>How to pursue pleasure rationally  consequences that are extremeely painful or again is there anyones who loves or  pursues or desires to obtain pain of itself because its sed great pleasure get well soon.</p></div>
+                            <div class="text"><p><?php echo substr(strip_tags($getData12['description']), 0,150);?></p></div>
                             <div class="information clearfix">
                                 <div class="info">
-                                    <figure class="image-thumb"><img src="images/resource/ceo-thumb.jpg" alt=""></figure>
-                                    <h3>Alex Zender</h3>
-                                    <p>CEO of Go Green</p>
+                                    <figure class="image-thumb"><img src="<?php echo $base_url . 'uploads/content_images/'.$getData13['image'] ?>" alt=""></figure>
+                                    <h3><?php echo $getData13['title']; ?></h3>
+                                    <p><?php echo substr(strip_tags($getData13['description']), 0,150);?></p>
                                 </div>
-                                <div class="signature"><img src="images/resource/signature-image-1.png" alt=""></div>
+                               <!--  <div class="signature"><img src="images/resource/signature-image-1.png" alt=""></div> -->
                             </div>
                         </div>
                         

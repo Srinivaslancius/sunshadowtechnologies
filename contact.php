@@ -153,10 +153,12 @@ if(mail($to,$subject,$message,$headers)) {
           $getSiteSettingsData = $getAllSiteSettingsData->fetch_assoc();
                     /*echo $getSiteSettingsData; die;*/ ?> 
                 <!--Info Column-->
+                <?php $getContentData1 = getAllDataCheckActive1('content_pages','0',18);
+                    $getData1 = $getContentData1->fetch_assoc(); ?>
                 <div class="column info-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
                 	<article class="inner-box">
-                		<h3 class="margin-bott-20">Our Address</h3>
-                        <div class="text margin-bott-40">Lorem Ipsum is simply dummy text of the printing and typese tting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </div>
+                		<h3 class="margin-bott-20"><?php echo $getData1['title'];?></h3>
+                        <div class="text margin-bott-40"><?php echo substr(strip_tags($getData1['description']), 0,150);?> </div>
                         <ul class="info-box">
                             <li><span class="icon flaticon-location"></span><strong>Address</strong> <?php echo $getSiteSettingsData['address']; ?></li>
                             <li><span class="icon flaticon-technology-5"></span><strong>Phone</strong> <?php echo $getSiteSettingsData['mobile']; ?></li>
@@ -168,7 +170,7 @@ if(mail($to,$subject,$message,$headers)) {
                 <!--Image Column-->
                 <div class="column image-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
                 	<article class="inner-box">
-                		<figure class="image-box"><img src="images/resource/featured-image-34.jpg" alt=""></figure>
+                		<figure class="image-box"><img src="<?php echo $base_url . 'uploads/content_images/'.$getData1['image'] ?>" alt=""></figure>
                     </article>
                 </div>
             
