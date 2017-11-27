@@ -69,7 +69,7 @@
                 <span class="menu-text">Featurs</span>
               </a>
             </li>
-            <li  class="<?php if($page_name == 'industries.php' || $page_name == 'add_industries.php.php' || $page_name == 'edit_industries.php.php') { echo "active"; } ?>">
+            <li  class="<?php if($page_name == 'industries.php' || $page_name == 'add_industries.php' || $page_name == 'edit_industries.php') { echo "active"; } ?>">
               <a href="industries.php" aria-haspopup="true">
                 <span class="menu-icon">
                    <i class="glyphicon glyphicon-hand-right"></i>
@@ -77,7 +77,7 @@
                 <span class="menu-text">Industries</span>
               </a>
             </li>
-            <li  class="<?php if($page_name == 'industries_test_cases.php.php' || $page_name == 'add_industries_test_cases.php.php' || $page_name == 'edit_industry_case_studies.php.php') { echo "active"; } ?>">
+            <li  class="<?php if($page_name == 'industries_test_cases.php' || $page_name == 'add_industries_test_cases.php' || $page_name == 'edit_industry_case_studies.php') { echo "active"; } ?>">
               <a href="industries_test_cases.php" aria-haspopup="true">
                 <span class="menu-icon">
                    <i class="glyphicon glyphicon-hand-right"></i>
