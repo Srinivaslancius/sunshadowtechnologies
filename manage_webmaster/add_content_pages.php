@@ -11,16 +11,16 @@ if (!isset($_POST['submit']))  {
   
   if($fileToUpload!='') {
 
-                $target_dir = "../uploads/our_clients_images/";
+                $target_dir = "../uploads/content_images/";
                 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
                 //$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $sql = "INSERT INTO our_clients (`title`,`description`,`image`,`status`) VALUES ('$title','$description','$fileToUpload','$status')"; 
+                    $sql = "INSERT INTO `content_pages` (`title`,`description`,`image`,`status`) VALUES ('$title','$description','$fileToUpload','$status')"; 
                   if($conn->query($sql) === TRUE){
-                     echo "<script type='text/javascript'>window.location='our_clients.php?msg=success'</script>";
+                     echo "<script type='text/javascript'>window.location='content_pages.php?msg=success'</script>";
                   } else {
-                     echo "<script type='text/javascript'>window.location='our_clients.php?msg=fail'</script>";
+                     echo "<script type='text/javascript'>window.location='content_pages.php?msg=fail'</script>";
                   }
                 } else {
                       echo "Sorry, there was an error uploading your file.";
@@ -31,7 +31,7 @@ if (!isset($_POST['submit']))  {
       <div class="site-content">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="m-y-0">Our Clients</h3>
+            <h3 class="m-y-0">Content Pages</h3>
           </div>
           <div class="panel-body">
             <div class="row">
