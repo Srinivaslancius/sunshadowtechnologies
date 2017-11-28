@@ -20,10 +20,10 @@
                         	<a href="#"><img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose1['image'] ?>" alt="<?php echo $getChoose1['title'];?>"></a>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="our_guarantee.php"><?php echo $getChoose1['title'];?></a></h3>
+                        	<h3><a href="about.php"><?php echo $getChoose1['title'];?></a></h3>
                            <!-- <div class="column-info">Environment, Go Green Company</div>-->
                             <div class="text"><?php echo substr(strip_tags($getChoose1['description']), 0,150);?></div>
-                            <a href="our_guarantee.php" class="theme-btn btn-style-three">Learn More</a>
+                            <a href="about.php" class="theme-btn btn-style-three">Learn More</a>
                         </div>
                     </article>
                 </div>
@@ -36,10 +36,10 @@
                         	<a href="#"><img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose2['image'] ?>" alt="<?php echo $getChoose2['title'];?>"></a>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="our_guarantee.php"><?php echo $getChoose2['title'];?></a></h3>
+                        	<h3><a href="case_studies.php"><?php echo $getChoose2['title'];?></a></h3>
                          <!--   <div class="column-info">Environment, Go Green Company</div>-->
                             <div class="text"><?php echo substr(strip_tags($getChoose2['description']), 0,150);?></div>
-                            <a href="our_guarantee.php" class="theme-btn btn-style-three">Learn More</a>
+                            <a href="case_studies.php" class="theme-btn btn-style-three">Learn More</a>
                         </div>
                     </article>
                 </div>
@@ -52,10 +52,10 @@
                         	<a href="#"><img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose3['image'] ?>" alt="<?php echo $getChoose3['title'];?>"></a>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="our_guarantee.php"><?php echo $getChoose3['title'];?></a></h3>
+                        	<h3><a href="contact.php"><?php echo $getChoose3['title'];?></a></h3>
                          <!--   <div class="column-info">Environment, Go Green Company</div>-->
                             <div class="text"><?php echo substr(strip_tags($getChoose3['description']), 0,150);?></div>
-                            <a href="our_guarantee.php" class="theme-btn btn-style-three">Learn More</a>
+                            <a href="contact.php" class="theme-btn btn-style-three">Learn More</a>
                         </div>
                     </article>
                 </div>

@@ -30,7 +30,7 @@
                 <ul>
                 	<?php $getBannersData = getAllDataCheckActive('banners',0);  ?>
                     <?php while ($row = $getBannersData->fetch_assoc()) { ?>
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/slides/1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo $base_url . 'uploads/banner_images/'.$row['banner'] ?>"  data-saveperformance="off"  data-title="<?php echo $row['title'];?>">
                     <img src="<?php echo $base_url . 'uploads/banner_images/'.$row['banner'] ?>"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
                     <div class="tp-caption sfl sfb tp-resizeme"
                     data-x="left" data-hoffset="90"
@@ -56,7 +56,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a></div>
+                    data-endeasing="Power4.easeIn"></div>
                     
                     </li>
                     <?php } ?>
@@ -71,7 +71,7 @@
     <section class="main-features">
     	<div class="auto-container">
         	<div class="title-box text-center">
-            	<h2>SAMPLE <span class="theme_color"> HEADING</span></h2>
+            	<h2>Industries</h2>
             <div class="row clearfix">
             	
                 <!--Feature Column-->
