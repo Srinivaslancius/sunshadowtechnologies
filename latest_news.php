@@ -12,7 +12,6 @@
                     <article class="inner-box">
                         <figure class="image-box">
                             <a href="#"><img style="width:500px;height:200px;" src="<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>" alt=""></a>
-                            <div class="post-tag">Featured</div>
                         </figure>
                         <div class="content-box">
                             <h3 style="text-align:left"><a href="news.php"><?php echo $getData['title']; ?></a></h3>
