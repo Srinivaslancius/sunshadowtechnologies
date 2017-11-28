@@ -192,12 +192,12 @@ if(mail($to,$subject,$message,$headers)) {
 					</div>
                      <script type="text/javascript">
                             var locations = [
-                              ['Adgreencost', 25.205630, 55.375550],
+                              ['Sun Shadow Technologies',17.446122, 78.393270],
                             ];
 
                             var map = new google.maps.Map(document.getElementById('map'), {
-                              zoom: 10,
-                              center: new google.maps.LatLng(25.204849, 55.270783),
+                              zoom: 14,
+                              center: new google.maps.LatLng(17.448293, 78.391485),
                               mapTypeId: google.maps.MapTypeId.ROADMAP
                             });
 
