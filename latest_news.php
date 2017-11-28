@@ -11,13 +11,13 @@
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="inner-box">
                         <figure class="image-box">
-                            <a href="#"><img style="width:500px;height:200px;" src="<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>" alt=""></a>
+                            <a href="#"><img style="width:500px;height:200px;" src="<?php echo $base_url . 'uploads/news_images/'.$row['banner'] ?>" alt=""></a>
                         </figure>
                         <div class="content-box">
-                            <h3 style="text-align:left"><a href="news.php"><?php echo $getData['title']; ?></a></h3>
+                            <h3 style="text-align:left"><a href="news.php?nid=<?php echo $row['id'];?>"><?php echo $row['title']; ?></a></h3>
                         <!--    <div class="column-info">13-14 Feb in Sanfransico, CA</div>-->
-                            <div class="text"><?php echo substr(strip_tags($getData['description']), 0,200);?> </div>
-                            <a href="news.php" class="theme-btn btn-style-three">Read More</a>
+                            <div class="text"><?php echo substr(strip_tags($row['description']), 0,200);?> </div>
+                            <a href="news.php?nid=<?php echo $row['id'];?>" class="theme-btn btn-style-three">Read More</a>
                         </div>
                     </article>
                 </div>

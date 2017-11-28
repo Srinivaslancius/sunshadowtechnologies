@@ -22,10 +22,14 @@
     	<?php include_once 'menu.php';?>
         
     </header><!--End Main Header -->
-    
+    <?php 
+        $id = $_GET['nid'];
+        $getNewsData = getDataFromTables('news',$status=NULL,'id',$id,$activeStatus=NULL,$activeTop=NULL);
+        $getAllNewsData  = $getNewsData->fetch_assoc();
+    ?>
     
     <!--Page Title-->
-      <section class="page-title" style="background-image:url(images/slides/4.jpg);">
+      <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/news_images/'.$getAllNewsData['banner'] ?>);">
     	<div class="auto-container">
         	<div class="sec-title">
                 <h1>Our <span class="normal-font">News</span></h1>
@@ -40,19 +44,13 @@
     	<div class="auto-container">
      <div class="title-box">
             	<!--<h1>Services</h1>-->
-           	<h3><b>New Case Studies & <span class="normal-font theme_color"> Brochure now available</span></b></h3><br>
-                <div class="text">10 November, 2014</div>
-				<div class="text">We just published the all new Adgreencoat brochure and <a href="#">DHL</a>, <a href="#">SKI Dubai</a> en <a href="#">Jumeirah</a> case studies on our website</div>
-				<div class="text">You can download the separate case studies on the <a href="downloads.php">'downloads'</a> page or view them on the <a href="case_studies.php">'case studies'</a> page on this website</div>				
-            </div>
+           	<h3><b><?php echo $getAllNewsData['title'];?></b></h3><br>
+                   <?php echo $getAllNewsData['description'];?>
+                
+	</div>
         </div>
     </section>
-	 <section class="recent-projects" style="margin-top:-120px">
-    	<?php include_once 'sample_heading.php';?>
-    </section>
-     <section class="events-section latest-events" style="margin-top:-100px">
-    	<?php include_once 'latest_news.php';?>
-    </section>
+     
      <section class="blog-news-section latest-news" style="margin-top:-150px">
     	<?php include_once 'our_clients.php';?>
     </section>	

@@ -107,12 +107,6 @@
         </div>
     </section>
     <!--Team Section-->
-    <section class="recent-projects" style="margin-top:-100px">
-        <?php include_once 'sample_heading.php';?>
-    </section>
-    <section class="events-section latest-events" style="margin-top:-100px">
-        <?php include_once 'latest_news.php';?>
-    </section>
      <section class="blog-news-section latest-news" style="margin-top:-150px">
         <?php include_once 'our_clients.php';?>
     </section>  

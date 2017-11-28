@@ -82,80 +82,6 @@
     </section>
     
     
-    <!--Two Column Fluid -->
-    <section class="two-column-fluid">
-    	
-    	<div class="outer clearfix">
-            
-            <article class="column left-column" style="background-image:url(images/resource/fluid-image-3.jpg);">
-                
-                <div class="content-box pull-right">	
-                    <h2>Some <span class="normal-font theme_color">Facts</span></h2>
-                    <div class="title-text">Lorem ipsum dolor some link sit amet, cum at inani interesset</div>
-                    <div class="text">We’re extremely proud of what we’ve achieved together with charitie lorem individuals, philanthropists and schools since the Big Give was founded in 2007, and here are some fact from our achivemnet.</div>
-                    <br>
-                    
-                    <div class="clearfix">
-                    	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-shapes-1"></span></div>
-                            <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="7845910" data-speed="1500">7,845,910</span></h4>
-                                <span class="title">Raised</span>
-                            </div>
-                        </div>
-                        
-                        <div class="icon-box">
-                        	<div class="icon"><span class="flaticon-tool-4"></span></div>
-                            <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="13360" data-speed="1500">12,360</span></h4>
-                                <span class="title">Projects</span>
-                            </div>
-                        </div>
-                        
-                        <div class="icon-box">
-                        	<div class="icon"><span class="flaticon-favorite"></span></div>
-                            <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="78459" data-speed="1500">225,580</span></h4>
-                                <span class="title">Donations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="clearfix"></div>
-            </article>
-            
-            <article class="column right-column" style="background-image:url(images/resource/fluid-image-4.jpg);">
-                
-                <div class="content-box pull-left">	
-                	<div class="outer-box">
-                    	<div class="quote-icon"><span class="fa fa-quote-left"></span></div>
-                        <h2>word from <span class="normal-font">CEO</span></h2>
-                        
-                        <!--Text Content-->
-                        <div class="text-content">
-                            <div class="text"><p>How to pursue pleasure rationally  consequences that are extremeely painful or again is there anyones who loves or  pursues or desires to obtain pain of itself because its sed great pleasure get well soon.</p></div>
-                            <div class="information clearfix">
-                                <div class="info">
-                                    <figure class="image-thumb"><img src="images/resource/ceo-thumb.jpg" alt=""></figure>
-                                    <h3>Alex Zender</h3>
-                                    <p>CEO of Go Green</p>
-                                </div>
-                                <div class="signature"><img src="images/resource/signature-image-1.png" alt=""></div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-                <div class="clearfix"></div>
-            </article>
-            
-        </div>
-        
-    </section>
-    
-    
     <!--Team Section-->
     <section class="team-section">
         <div class="auto-container">
@@ -194,9 +120,6 @@
         </div>
     </section>
     <!--Blog News Section-->
-    <section class="events-section latest-events" style="margin-top:-100px">
-    	<?php include_once 'latest_news.php';?>
-    </section>
      <section class="blog-news-section latest-news" style="margin-top:-150px">
     	<?php include_once 'our_clients.php';?>
     </section>	
