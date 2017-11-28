@@ -81,7 +81,7 @@
                 	<article class="inner-box">
                     	<div class="icon-box">
                         	<div class="icon"><span><img style="width:50px;height:50px;" src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>"  alt=""/> </span></div>
-                            <h3 class="title"><?php echo $row['title']; ?></h3>
+                            <h3 class="title"><?php echo wordwrap($row['title'],14,"<br>\n",TRUE); ?></h3>
                         </div>
                     </article>
                 </div>
