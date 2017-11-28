@@ -38,11 +38,6 @@
     <!--Main Features-->
     <section class="main-features">
     	<div class="auto-container">
-      <!-- <div class="title-box text-center">
-            	<h1>Services</h1>
-           	<h2>People Working With US</h2>
-                <div class="text">Lorem ipsum dolor sit amet, pro in harum aperiri persecuti, eu mea minim platonem, mea cetero intellegam eu. Mel ferri</div>
-            </div>-->
             
             <div class="row clearfix">
             	

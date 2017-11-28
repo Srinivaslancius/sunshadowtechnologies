@@ -12,14 +12,14 @@
 
 <body>
 <div class="page-wrapper">
- 	
+    
     <!-- Preloader -->
    
     
- 	
+    
     <!-- Main Header -->
     <header class="main-header">
-    	<?php include_once 'menu.php';?>
+        <?php include_once 'menu.php';?>
         
     </header><!--End Main Header -->
     <?php
@@ -134,8 +134,8 @@ if(mail($to,$subject,$message,$headers)) {
 ?>
     <!--Page Title-->
     <section class="page-title" style="background-image:url(images/slides/4.jpg);">
-    	<div class="auto-container">
-        	<div class="sec-title">
+        <div class="auto-container">
+            <div class="sec-title">
                 <h1>Contact <span class="normal-font">Us</span></h1>
                 <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">Contact Us</a></div>
             </div>
@@ -145,9 +145,9 @@ if(mail($to,$subject,$message,$headers)) {
     
     <!--Default Section / Other Info-->
     <section class="default-section other-info">
-    	<div class="auto-container">
+        <div class="auto-container">
         
-        	<div class="row clearfix">
+        <div class="row clearfix">
         <?php 
         $getAllSiteSettingsData = getAllData('site_settings');
           $getSiteSettingsData = $getAllSiteSettingsData->fetch_assoc();
@@ -156,8 +156,8 @@ if(mail($to,$subject,$message,$headers)) {
                 <?php $getContentData1 = getAllDataCheckActive1('content_pages','0',18);
                     $getData1 = $getContentData1->fetch_assoc(); ?>
                 <div class="column info-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
-                	<article class="inner-box">
-                		<h3 class="margin-bott-20"><?php echo $getData1['title'];?></h3>
+                    <article class="inner-box">
+                        <h3 class="margin-bott-20"><?php echo $getData1['title'];?></h3>
                         <div class="text margin-bott-40"><?php echo substr(strip_tags($getData1['description']), 0,150);?> </div>
                         <ul class="info-box">
                             <li><span class="icon flaticon-location"></span><strong>Address</strong> <?php echo $getSiteSettingsData['address']; ?></li>
@@ -168,10 +168,36 @@ if(mail($to,$subject,$message,$headers)) {
                 </div>
                 
                 <!--Image Column-->
-                <div class="column image-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box"><img src="<?php echo $base_url . 'uploads/content_images/'.$getData1['image'] ?>" alt=""></figure>
-                    </article>
+                <div class="column form-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                    <h2>Send Message</h2>
+                    <!--COntact Form-->
+                    <div class="inner-box contact-form">
+                        <form method="post" action="" id="contact-form">
+                            <div class="row clearfix">
+                                <!--Form Group-->
+                                <div class="form-group col-md-6 col-xs-12">
+                                    <input type="text" name="name_contact" value="" placeholder="Your Name" required>
+                                </div>
+                                <!--Form Group-->
+                                <div class="form-group col-md-6 col-xs-12">
+                                    <input type="text" name="email_contact" value="" placeholder="Your Email" required>
+                                </div>
+                                 <div class="form-group col-md-12 col-xs-12">
+                                    <input type="text" name="text" value="" placeholder="Subject" required>
+                                </div>
+                                <!--Form Group-->
+                                <div class="form-group col-md-12 col-xs-12">
+                                    <textarea name="message_contact" placeholder="Message" required></textarea>
+                                </div>
+                                
+                                <!--Form Group-->
+                                <div class="form-group col-md-12 col-xs-12">
+                                    <div class="text-right"><button type="submit" class="theme-btn btn-style-two">Send</button></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!--COntact Form-->
+                    
                 </div>
             
             </div>
@@ -180,16 +206,15 @@ if(mail($to,$subject,$message,$headers)) {
     
     
     <!--Contact Section-->
-    <section class="contact-section no-padd-top">
-    	<div class="auto-container">
-        
-        	<div class="row clearfix">
+    <section class="contact-section ">
+        <div class="auto-container" style="margin-top:-167px;">
+            <div class="row clearfix">
                 <script src="https://maps.google.com/maps/api/js?key=AIzaSyA04qekzxWtnZq6KLkabMN_4abcJt9nCDk" type="text/javascript"></script>
                 <!--Map Column-->
-                <div class="column map-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
-                	<h2>Our Location on Map</h2>
-					<div class="map-responsive" id="map">
-					</div>
+                <div style="width:100%;"class="column map-column col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                    <h2 style="text-align:center;">Our Location on Map</h2>
+                    <div class="map-responsive" id="map">
+                    </div>
                      <script type="text/javascript">
                             var locations = [
                               ['Sun Shadow Technologies',17.446122, 78.393270],
@@ -221,62 +246,31 @@ if(mail($to,$subject,$message,$headers)) {
                           </script>
                 </div>
                 <!--Form Column-->
-                <div class="column form-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
-                	<h2>Send Message</h2>
-                	<!--COntact Form-->
-                	<div class="inner-box contact-form">
-                    	<form method="post" action="" id="contact-form">
-                        	<div class="row clearfix">
-                            	<!--Form Group-->
-                                <div class="form-group col-md-6 col-xs-12">
-                                	<input type="text" name="name_contact" value="" placeholder="Your Name" required>
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group col-md-6 col-xs-12">
-                                	<input type="text" name="email_contact" value="" placeholder="Your Email" required>
-                                </div>
-								 <div class="form-group col-md-12 col-xs-12">
-                                	<input type="text" name="text" value="" placeholder="Subject" required>
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group col-md-12 col-xs-12">
-                                	<textarea name="message_contact" placeholder="Message" required></textarea>
-                                </div>
-                                
-                                <!--Form Group-->
-                                <div class="form-group col-md-12 col-xs-12">
-                                	<div class="text-right"><button type="submit" class="theme-btn btn-style-two">Send</button></div>
-                                </div>
-                            </div>
-                        </form>
-                    </div><!--COntact Form-->
-                    
-                </div>
             
             </div>
         </div>
     </section>
-	    <section class="blog-news-section latest-news" style="margin-top:-150px">
-    	<?php include_once 'our_clients.php';?>
-    </section>	
-	<section class="sponsors-section" style="margin-top:-100px">
+        <section class="blog-news-section latest-news" style="margin-top:-150px">
+        <?php include_once 'our_clients.php';?>
+    </section>  
+    <section class="sponsors-section" style="margin-top:-100px">
        <?php include_once 'green_marks.php';?>
     </section>
-	<!--Parallax Section-->
+    <!--Parallax Section-->
    <section class="parallax-section" style="background-image:url(images/slides/4.jpg);">
-    	 <?php include_once 'parallax.php';?>   
+         <?php include_once 'parallax.php';?>   
     </section>
     
     
     <!--Intro Section-->
     <section class="subscribe-intro">
-    	<?php include_once 'newsletter.php';?>
+        <?php include_once 'newsletter.php';?>
     </section>
-	
+    
     
     <!--Main Footer-->
     <footer class="main-footer" style="background-image:url(images/background/footer-bg.jpg);">
-    	
+        
     <?php include_once 'footer.php';?>
     </footer>
     

@@ -1,3 +1,4 @@
+
 <!--Footer Upper-->        
         <div class="footer-upper">
             <div class="auto-container">
@@ -5,6 +6,24 @@
                 	
                     <!--Two 4th column-->
               <div class="col-sm-4">
+
+<?php 
+if (!isset($_POST['newsletter']))  {
+            echo "";
+    } else  { 
+    //echo "<pre>";print_r($_POST);
+    $email = $_POST['email'];
+    $created_at = date("Y-m-d h:i:s");
+    $sql = "INSERT INTO news_letter (`email`,`created_at`) VALUES ('$email','$created_at')";
+    if($conn->query($sql) === TRUE){
+       echo "<script>alert('Data Updated Successfully');window.location.href=window.location.href;</script>";
+    } else {
+       echo "<script>alert('Data Updation Failed');window.location.href=window.location.href;</script>";
+    }
+}
+        
+?>
+                
             <?php 
                 $getAllSiteSettingsData = getAllData('site_settings');
                 $getSiteSettingsData = $getAllSiteSettingsData->fetch_assoc();
