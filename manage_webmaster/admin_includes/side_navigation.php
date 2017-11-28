@@ -82,7 +82,7 @@
                 <span class="menu-icon">
                    <i class="glyphicon glyphicon-hand-right"></i>
                 </span> 
-                <span class="menu-text">Industries Test Cases</span>
+                <span class="menu-text">Industries Case Studies</span>
               </a>
             </li>
             <li  class="<?php if($page_name == 'case_studies.php' || $page_name == 'add_case_studies.php' || $page_name == 'edit_case_studies.php') { echo "active"; } ?>">
