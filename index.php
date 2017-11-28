@@ -43,7 +43,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h3 class="bg-color">The Energy Saving ECO COATING</h3></div>
+                    data-endeasing="Power4.easeIn"><h3 class="bg-color"><?php echo $row['title'];?></h3></div>
                     
                     <div class="tp-caption sfr sfb tp-resizeme"
                     data-x="left" data-hoffset="90"
@@ -80,7 +80,7 @@
                 <div class="features-column col-lg-2 col-md-6 col-xs-12">
                 	<article class="inner-box">
                     	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-illumination"></span></div>
+                        	<div class="icon"><span><img style="width:50px;height:50px;" src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>"  alt=""/> </span></div>
                             <h3 class="title"><?php echo $row['title']; ?></h3>
                         </div>
                     </article>
@@ -105,7 +105,7 @@
             <article class="column text-column dark-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image:url(images/resource/fluid-image-2.jpg);">
                 
                 <div class="content-box pull-left">	
-                    <h2> <span class="theme_color"><?php echo $getData['title']; ?></span> </h2>
+                    <h2> <span><?php echo $getData['title']; ?></span> </h2>
                 <!--	<div class="title-text">Lorem ipsum dolor <a href="#"><strong>some link</strong></a> sit amet, cum at inani interesset </div>-->
                     <div class="text"><?php echo substr(strip_tags($getData['description']), 0,150);?></div>
 					
