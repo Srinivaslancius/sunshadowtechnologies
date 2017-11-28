@@ -247,7 +247,7 @@
     <section class="events-section latest-events">
     	 <?php include_once 'latest_news.php';?>
     </section>
-     <section class="blog-news-section latest-news" style="margin-top:-150px">
+     <section class="blog-news-section latest-news" style="margin-top:-111px">
     	 <?php include_once 'our_clients.php';?>
     </section>
     <!--Sponsors Section-->
