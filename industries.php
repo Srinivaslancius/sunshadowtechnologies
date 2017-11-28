@@ -47,72 +47,18 @@
             <div class="row clearfix">
             	
                 <!--Default Icon Column-->
+                <?php $getIndustriesData = getAllDataCheckActive('industries',0);?>
+                <?php while ($row = $getIndustriesData->fetch_assoc()) { ?>
                 <div class="default-icon-column col-lg-4 col-md-6 col-xs-12">
                 	<article class="inner-box">
                     	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-illumination"></span></div>
+                        	<div class="icon"><span><img style="width:50px;height:50px;" src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>"  alt=""/></span></div>
                         </div>
-                        <h3>Building</h3>
-                        <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei purto dolor timeam mea </div>
+                        <h3><?php echo $row['title'];?></h3>
+                        <div class="text"><?php echo substr(strip_tags($row['description']), 0,100);?></div>
                     </article>
                 </div>
-                
-                <!--Default Icon Column-->
-                <div class="default-icon-column col-lg-4 col-md-6 col-xs-12">
-                	<article class="inner-box">
-                    	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-arrows-3"></span></div>
-                        </div>
-                        <h3>Piping</h3>
-                        <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei purto dolor timeam mea </div>
-                    </article>
-                </div>
-                
-                <!--Default Icon Column-->
-                <div class="default-icon-column col-lg-4 col-md-6 col-xs-12">
-                	<article class="inner-box">
-                    	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-nature-1"></span></div>
-                        </div>
-                        <h3>Transportation</h3>
-                        <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei purto dolor timeam mea </div>
-                    </article>
-                </div>
-                
-                <!--Default Icon Column-->
-                <div class="default-icon-column col-lg-4 col-md-6 col-xs-12">
-                	<article class="inner-box">
-                    	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-summer-3"></span></div>
-                        </div>
-                        <h3>Storage Facilities</h3>
-                        <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei purto dolor timeam mea </div>
-                    </article>
-                </div>
-                
-                <!--Default Icon Column-->
-                <div class="default-icon-column col-lg-4 col-md-6 col-xs-12">
-                	<article class="inner-box">
-                    	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-technology-13"></span></div>
-                        </div>
-                        <h3>Agriculture</h3>
-                        <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei purto dolor timeam mea </div>
-                    </article>
-                </div>
-                
-                <!--Default Icon Column-->
-                <div class="default-icon-column col-lg-4 col-md-6 col-xs-12">
-                	<article class="inner-box">
-                    	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-summer"></span></div>
-                        </div>
-                        <h3>Telecommunication</h3>
-                        <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei purto dolor timeam mea </div>
-                    </article>
-                </div>
-               
-                
+               <?php } ?>
             </div>
         </div>
     </section>
