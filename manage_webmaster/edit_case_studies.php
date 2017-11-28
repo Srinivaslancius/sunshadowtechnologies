@@ -32,7 +32,7 @@ if (!isset($_POST['submit']))  {
         $file_destination = '../uploads/case_studies_images/' . $product_images1;
         if($product_images1!=''){
             move_uploaded_file($file_tmp, $file_destination);        
-            $sql = "INSERT INTO industry_images ( `industry_id`,`industry_image`) VALUES ('$last_id','$product_images1')";
+            $sql = "INSERT INTO industry_images ( `industry_id`,`industry_images`) VALUES ('$id','$product_images1')";
             $result = $conn->query($sql);
         }        
     }
@@ -119,6 +119,7 @@ if (!isset($_POST['submit']))  {
     CKEDITOR.replace( 'product_info' ); 
 </script>
 
+
 <script type="text/javascript">
 $(function(){
     $(document).on('click','.ajax_img_del',function(){
@@ -143,25 +144,4 @@ $(function(){
          }
     });
 });
-function getSubCategories(val) {
-    $.ajax({
-    type: "POST",
-    url: "get_sub_categories.php",
-    data:'category_id='+val,
-    success: function(data){
-        $("#sub_category_id").html(data);
-    }
-    });
-}
-
-function getSubSubCategories(val) {
-    $.ajax({
-    type: "POST",
-    url: "get_sub_sub_categories.php",
-    data:'sub_category_id='+val,
-    success: function(data){
-        $("#sub_sub_category_id").html(data);
-    }
-    });
-}
 </script>

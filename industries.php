@@ -51,13 +51,14 @@
                         </div>
                         <h3><?php echo $row['title'];?></h3>
                         <div class="text"><?php echo substr(strip_tags($row['description']), 0,100);?></div>
+                        <!-- <a href="industries_details.php?indId=<?php echo $row['id'];?>" class="theme-btn btn-style-three">Read More</a> -->
                     </article>
                 </div>
                <?php } ?>
             </div>
         </div>
     </section>
-     <section class="blog-news-section latest-news" style="margin-top:-150px">
+     <section class="blog-news-section latest-news">
     	<?php include_once 'our_clients.php';?>
     </section>	
     <!--Sponsors Section-->

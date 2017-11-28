@@ -22,35 +22,39 @@
     	<?php include_once 'menu.php';?>
         
     </header><!--End Main Header -->
-    <?php 
-        $id = $_GET['nid'];
-        $getNewsData = getDataFromTables('news','0','id',$id,$activeStatus=NULL,$activeTop=NULL);
-        $getAllNewsData  = $getNewsData->fetch_assoc();
-    ?>
-    
+
     <!--Page Title-->
-      <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/news_images/'.$getAllNewsData['banner'] ?>);">
-    	<div class="auto-container">
-        	<div class="sec-title">
-                <h1>Our <span class="normal-font">News</span></h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">News</a></div>
+      <section class="page-title" style="background-image:url(images/slides/4.jpg);">
+        <div class="auto-container">
+            <div class="sec-title">
+                <h1>Our <span class="normal-font">Industries</span></h1>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">Industries</a></div>
             </div>
         </div>
     </section>
-    
-    
+    <?php $getIndustries = "SELECT * FROM industries WHERE status='0' "; 
+        $getIndustriesData = $conn->query($getIndustries);
+        while($getId = $getIndustriesData->fetch_assoc()){
+    ?>
+    <?php
+        $getIndId = $getId['id'];
+        $id = $_GET['indId'];
+        $getIndustries = "SELECT * FROM  industries_test_cases WHERE id = '$id' AND industry_id = '$getIndId' AND status = 0";
+        $getIndustriesData = $conn->query($getIndustries);
+        $getIndustriesAllData  = $getIndustriesData->fetch_assoc();
+    ?>
     <!--Main Features-->
     <section class="main-features">
     	<div class="auto-container">
      <div class="title-box">
             	<!--<h1>Services</h1>-->
-           	<h3><b><?php echo $getAllNewsData['title'];?></b></h3><br>
-                   <?php echo $getAllNewsData['description'];?>
+           	<h3><b><?php echo $getIndustriesAllData['title'];?></b></h3><br>
+                   <?php echo $getIndustriesAllData['description'];?>
                 
 	</div>
         </div>
     </section>
-     
+     <?php }?>
      <section class="blog-news-section latest-news" style="margin-top:-150px">
     	<?php include_once 'our_clients.php';?>
     </section>	

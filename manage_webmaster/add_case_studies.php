@@ -100,7 +100,6 @@ if (!isset($_POST['submit']))  {
     //CKEDITOR.replace( 'key_features' );
     CKEDITOR.replace( 'product_info' );
 </script>
-
 <script type="text/javascript">
 function getSubCategories(val) {
     $.ajax({
