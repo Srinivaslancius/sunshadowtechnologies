@@ -72,7 +72,7 @@ $getAllLocations = getDataFromTables('lkp_locations','0',$clause=NULL,$id=NULL,$
                   </div>
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Title</label>
-                    <input type="text" class="form-control" id="form-control-2" name="title" required value="<?php echo $getContentData1['title'];?>">
+                    <input type="text" class="form-control" id="form-control-2" name="title" required value="<?php echo $getDownloadData['title'];?>">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">

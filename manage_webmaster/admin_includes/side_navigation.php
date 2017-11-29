@@ -66,7 +66,7 @@
                 <span class="menu-icon">
                    <i class="glyphicon glyphicon-hand-right"></i>
                 </span> 
-                <span class="menu-text">Featurs</span>
+                <span class="menu-text">Features</span>
               </a>
             </li>
             <li  class="<?php if($page_name == 'industries.php' || $page_name == 'add_industries.php' || $page_name == 'edit_industries.php') { echo "active"; } ?>">
