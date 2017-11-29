@@ -10,11 +10,11 @@ $id = $_GET['did'];
             $lkp_location_id = $_POST['lkp_location_id'];
             $description = $_POST['description'];
             $status = $_POST['status'];
-    
+     
         
           if($_FILES["fileToUpload"]["name"]!='' ) {
 
-            $fileToUpload = $_FILES["fileToUpload"]["name"];
+            $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
               $target_dir = "../uploads/downloads_pdf_images/";
               $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
               $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

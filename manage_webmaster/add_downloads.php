@@ -4,17 +4,17 @@
           //If fail
           echo "fail";
         } else  {
-            //If success
+            //If success 
             $category_id = $_POST['category_id'];
             $title = $_POST['title'];
             $description = $_POST['description'];
-            $fileToUpload = $_FILES["fileToUpload"]["name"];
+            $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
             $status = $_POST['status'];
             
             if($fileToUpload!='') {
 
                 $target_dir = "../uploads/downloads_pdf_images/";
-                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                $target_file = $target_dir . basename($fileToUpload);
                 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
