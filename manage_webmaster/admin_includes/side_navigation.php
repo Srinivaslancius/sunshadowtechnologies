@@ -114,7 +114,7 @@
                 <span class="menu-icon">
                    <i class="zmdi zmdi-comments  zmdi-hc-fw"></i>
                 </span> 
-                <span class="menu-text">Testimonials</span>
+                <span class="menu-text">Our Team</span>
               </a>
             </li>
             <!-- <li  class="<?php if($page_name == 'projects.php' || $page_name == 'add_projects.php' || $page_name == 'edit_projects.php') { echo "active"; } ?>">
