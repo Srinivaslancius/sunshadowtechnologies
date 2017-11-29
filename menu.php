@@ -1,16 +1,14 @@
-<?php include_once 'title.php';?>
-
 <div class="top-bar">
-            <div class="top-container">
-                <!--Info Outer-->
-        <?php 
+    <?php 
             $getAllSiteSettingsData = getAllData('site_settings');
             $getSiteSettingsData = $getAllSiteSettingsData->fetch_assoc();
          ?> 
          <?php $getContentData1 = getAllDataCheckActive1('content_pages','0',12);
                 $getData = $getContentData1->fetch_assoc(); ?>
+        	<div class="top-container">
+            	<!--Info Outer-->
                  <div class="info-outer">
-                    <!--Info Box-->
+                 	<!--Info Box-->
                     <ul class="info-box clearfix">
                         <li><span class="icon flaticon-interface"></span><a href="mailto:<?php echo $getSiteSettingsData['email'];?>"><?php echo $getSiteSettingsData['email']; ?></a></li>
                         <li><span class="icon flaticon-technology-5"></span><a href="Tel:<?php echo $getSiteSettingsData['mobile']; ?>"><?php echo $getSiteSettingsData['mobile']; ?></a></li>
@@ -24,15 +22,13 @@
                  </div>
             </div>
         </div>
-        <!-- Header Upper -->
-        <div class="header-upper">
-            <div class="auto-container clearfix">
-            
-                <!-- Logo -->
+    	<!-- Header Upper -->
+    	<div class="header-upper">
+        	<div class="auto-container clearfix" style="max-width:1350px">			
+            	<!-- Logo -->
                 <div class="logo">
-                    <a href="index.php"><img src="<?php echo $base_url . 'uploads/logo/'.$getSiteSettingsData['logo'] ?>" alt="Greenture"></a>
-                 </div>
-                 
+                    <a href="index.php"><img src="<?php echo $base_url . 'uploads/logo/'.$getSiteSettingsData['logo'] ?>" alt="<?php echo $getSiteSettingsData['admin_title']; ?>"></a>
+                 </div>                
                  <!--Nav Outer-->
                 <div class="nav-outer clearfix">
                     
@@ -42,7 +38,7 @@
                     <nav class="main-menu">
                         
                         <div class="navbar-header">
-                            <!-- Toggle Button -->      
+                            <!-- Toggle Button -->    	
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -60,9 +56,8 @@
                         }
                         </style>
                         <div class="navbar-collapse collapse clearfix">
-                            <ul class="navigation">
-                            
-                                <li  class="active"><a href="index.php" <?php if($page_name == 'index.php') {  ?> class="check_page" <?php } ?>>Home</a>
+                            <ul class="navigation">                                                         
+								 <li  class="active"><a href="index.php" <?php if($page_name == 'index.php') {  ?> class="check_page" <?php } ?>>Home</a>
                                 
                                 </li>
                                  <li class="active"><a href="about.php" <?php if($page_name == 'about.php') {  ?> class="check_page" <?php } ?>>About</a>
@@ -84,7 +79,7 @@
                                 <li class="active"><a href="downloads.php" <?php if($page_name == 'downloads.php') {  ?> class="check_page" <?php } ?>>Downloads</a></li>
                                  <li class="active"><a href="faqs.php" <?php if($page_name == 'faqs.php') {  ?> class="check_page" <?php } ?>>F.A.Q</a></li>
                                 <li class="active"><a href="contact.php" <?php if($page_name == 'contact.php') {  ?> class="check_page" <?php } ?>>Contact</a></li>
-                                <li><a href="index.php"><img src="<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>" alt="sunshadow"></a></li>
+								<li><a href="index.php"><img src="<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>" alt="<?php echo $getData['title']; ?>"></a></li> 
                             </ul>
                         </div>
                     </nav><!-- Main Menu End-->

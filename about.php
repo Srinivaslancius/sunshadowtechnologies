@@ -98,10 +98,10 @@
 
                 <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="<?php echo $base_url . 'uploads/testimonial_images/'.$row['image'] ?>" alt="<?php echo $row['title']; ?>"></a></figure>
+                        <figure class="image"><img src="<?php echo $base_url . 'uploads/testimonial_images/'.$row['image'] ?>" alt="<?php echo $row['title']; ?>"></figure>
                         <div class="member-info">
                             <h3><?php echo $row['title']; ?></h3>
-                            <div class="designation">Senior Worker</div>
+                            
                         </div>
                         <div class="content">
                             <div class="text"><p><?php echo substr(strip_tags($row['description']), 0,150);?></p></div>
