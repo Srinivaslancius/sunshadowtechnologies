@@ -39,7 +39,7 @@
     <?php
         $getIndId = $getId['id'];
         $id = $_GET['indId'];
-        $getIndustries = "SELECT * FROM  industries_test_cases WHERE id = '$id' AND industry_id = '$getIndId' AND status = 0";
+        echo $getIndustries = "SELECT * FROM  industries_test_cases WHERE id = '$id' AND industry_id = '$getIndId' AND status = 0";die;
         $getIndustriesData = $conn->query($getIndustries);
         $getIndustriesAllData  = $getIndustriesData->fetch_assoc();
     ?>
@@ -50,7 +50,17 @@
             	<!--<h1>Services</h1>-->
            	<h3><b><?php echo $getIndustriesAllData['title'];?></b></h3><br>
                    <?php echo $getIndustriesAllData['description'];?>
-                
+            <article class="inner-box">
+                        <figure class="image-box">
+                            <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><img style="width:55px;height:55px;"src="images/gallery/pdf1.png" alt=""></a>   
+                        </figure>
+                        <div class="content-box">
+                            <h4 style="font-size:15px; text-align:center"><a href="#"><?php echo $getIndustriesAllData['title']; ?></a></h4>
+                            
+                          <!--  <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
+                            <a href="#" class="theme-btn btn-style-three">Read More</a>-->
+                        </div>
+            </article>    
 	</div>
         </div>
     </section>
