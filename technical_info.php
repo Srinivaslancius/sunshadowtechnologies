@@ -22,13 +22,14 @@
         <?php include_once 'menu.php';?>
     </header><!--End Main Header -->
     
-    
+    <?php $getTechnicalInfoData = getAllDataCheckActive1('content_pages','0',19);
+          $getData = $getTechnicalInfoData->fetch_assoc(); ?>
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/slides/4.jpg);">
+    <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>);">
         <div class="auto-container">
             <div class="sec-title">
-                <h1>Technical Info</h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">Technical Info</a></div>
+                <h1><?php echo $getData['title'];?></h1>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current"><?php echo $getData['title'];?></a></div>
             </div>
         </div>
     </section>
@@ -37,74 +38,18 @@
     <!--Default Section-->
     <section class="default-section">
         <div class="auto-container">
-        
             <div class="row clearfix">
                 
                 <!--Column-->
                 <div class="column default-text-column col-md-12 col-sm-12 col-xs-12">
                     <div class="text-block">
-                        <h3>The best and simplest way of heat insulation is COATING</h3>
-                        <div class="text">
-                        <p>There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected </p>
-                        <p>There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration 
-                        in some form, by injected. There are many variations of passages of Lorem real lypsum available, but the in the majority have 
-                        suffered alteration in some form, by injected. There are many variations of passages of Lorem real lypsum available, but the 
-                        in the majority have suffered alteration in some form, by injected. There are many variations of passages of Lorem real lypsum 
-                        available, but the in the majority have suffered alteration in some form</p></div>
-                        <div class="text">
-                        <h3 style="text-indent:6px">There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected </h3>
-                        <p>There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered 
-                        alteration in some form, by injected. There are many variations of passages of Lorem real lypsum available, but the in the 
-                        majority have suffered alteration in some form, by injected. There are many variations of passages of Lorem real lypsum available, 
-                        but the in the majority have suffered alteration in some form, by injected. There are many variations of passages of Lorem real 
-                        lypsum available, but the in the majority have suffered alteration in some form, by injected. There are many variations of passages 
-                        of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected. There are many variations
-                        of passages of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected </p><div><br>
-                        <div class="text">
-                        <h3 style="text-indent:6px">Adgreencoat vs Conventional coating</h3>
-                        <h3 style="text-indent:6px"><b>The best and simplest way of heat insulation is COATING</b></h3>
-                        <p>There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected </p>
-                        </div>                  
-                        <div class="row">
-                        <div class="col-sm-4">
-                        <img src="images/slides/13.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-sm-4">
-                        <img src="images/slides/13.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-sm-4">
-                        </div>
-                        </div><br>
-                        <div class="text">
-                        <h3>Adgreencoat vs Conventional coating</h3>
-                        <h3><b>The best and simplest way of heat insulation is COATING</b></h3>
-                        <p>There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration
-                            in some form, by injected </p></div>
-                            <div class="row">
-                        <div class="col-sm-4">
-                        <img src="images/slides/13.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-sm-4">
-                        <img src="images/slides/13.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-sm-4">
-                        </div>
-                        </div><br>
-                        <h3>Adgreencoat EX</h3>
-                        <p>There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected. There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected.There are many variations of passages of Lorem real lypsum available, but the in the majority have suffered alteration in some form, by injected</p>
-                        </div>
+                        <?php echo $getData['description'];?>
+                        
                     </div>
+                
                 </div>
-                
-                <!--Column-->
-               
-                
-                <!--Column-->
-                
-                
-            </div>
-            
-        </div>
+             </div>
+        </div>     
     </section>
     <!--Team Section-->
      <section class="blog-news-section latest-news" style="margin-top:-150px">
