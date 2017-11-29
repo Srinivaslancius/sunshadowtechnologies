@@ -34,20 +34,29 @@
         </div>
     </section>
     
-    
+    <?php $id = $_GET['tid']; ?>
     <!--Main Features-->
     <section class="main-features">
+        <?php $getIndustries = "SELECT * FROM industries WHERE id = '$id' AND status = 0";
+              $getIndNames = $conn->query($getIndustries);
+        ?>
     	<div class="auto-container">
-     <div class="title-box">
+       <?php $getIndNames1 = $getIndNames->fetch_assoc(); ?>     
+        <div class="title-box">
             	<!--<h1>Services</h1>-->
-           	<h3><b>NCK BUILDING<span class="normal-font theme_color"> TEST CASES</span></b></h3><br>
-                <div class="text">On the right side of this page you can download various case studies of Adgreencoat applications in the Building Industry. These case studies wills show and inform you about specific applications</div>
-				<div class="text">Case Studie PDF: <a href="images/slides/pdf.pdf">Case Study 1.1</a></div>
-				<div class="text">Case Studie PDF: <a href="images/slides/pdf.pdf">Trail Saitama-Kawasaki</a></div>
-				<div class="text">Case Studie PDF: <a href="images/slides/pdf.pdf">Trail Toppan a.o</a></div>
-				<div class="text">Case Studie PDF: <a href="images/slides/pdf.pdf">Case Study 1.1</a></div>
-				<div class="text">Case Studie PDF: <a href="images/slides/pdf.pdf">Trail Saitama-Kawasaki</a></div>
-				<div class="text">Case Studie PDF: <a href="images/slides/pdf.pdf">Trail Toppan a.o</a></div>
+           	<h3><b><?php echo $getIndNames1['title'];?><span class="normal-font theme_color"> TEST CASES</span></b></h3><br>
+                <div class="text"><?php echo $getIndNames1['description'];?></div>
+                <?php $getId = $getIndNames1['id']; $getPdfs = "SELECT * FROM industry_pdfs WHERE industry_id =  '$getId' ";
+                      $getPdfsImgs = $conn->query($getPdfs);
+                ?>
+                <?php if($getPdfsImgs->num_rows > 0) { ?>
+                <?php while($getPdfData = $getPdfsImgs->fetch_assoc()) { ?>
+				<div class="text">Case Studie PDF: <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getPdfData['industry_pdfs'] ?>" target="_blank"><?php echo $getPdfData['industry_pdfs']; ?></a></div>
+				<?php } }
+                else { ?> 
+                <div style="text-align:left">
+                        <h3>Test Cases Not Found!</h3>
+                </div> <?php }?>
             </div>
         </div>
     </section>

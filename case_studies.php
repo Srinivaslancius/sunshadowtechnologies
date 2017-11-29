@@ -54,127 +54,135 @@
             <div class="row filter-list clearfix">
                 
                 <!--Column-->
-                <div class="column mix mix_all eco plants col-md-4 col-sm-6 col-xs-12">
+                <?php $getCaseStudies1 = "SELECT * FROM industry_case_studies WHERE industry_id = 3 AND status = 0";
+                      $getImgs = $conn->query($getCaseStudies1); 
+                ?>
+                <div class="column mix mix_all environment  col-md-4 col-sm-6 col-xs-12">
                     <!--Default Portfolio Item-->
+                    <?php while($row = $getImgs->fetch_assoc()) { ?>
                     <div class="default-portfolio-item">
                         <div class="inner-box text-center">
                             <!--Image Box-->
-                            <figure class="image-box"><img src="images/slides/13.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" alt=""></figure>
                             <div class="overlay-box">
                                 <div class="inner-content">
                                     <div class="content">
-                                        <h3><a href="test_cases.php">see all Building case studies</a></h3>
-                                        <a class="arrow lightbox-image" href="images/slides/13.jpg" title="Buildings"><span class="icon flaticon-cross-4"></span></a>
+                                        <h3><a href="test_cases.php?tid=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
+                                        <a class="arrow lightbox-image" href="<?php echo $base_url . 'uploa3s/inustries_case_studies_images/'.$row['image'] ?>" title="Buildings"><span class="icon flaticon-cross-4"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                 </div>
                 
                 <!--Column-->
-                <div class="column mix mix_all environment  energy animals col-md-4 col-sm-6 col-xs-12">
+                <?php $getCaseStudies2 = "SELECT * FROM industry_case_studies WHERE industry_id = 4 AND status = 0";
+                      $getImgs2 = $conn->query($getCaseStudies2); 
+                ?>
+                <div class="column mix mix_all environment eco col-md-4 col-sm-6 col-xs-12">
                     <!--Default Portfolio Item-->
+                    <?php while($row = $getImgs2->fetch_assoc()) { ?>
                     <div class="default-portfolio-item">
                         <div class="inner-box text-center">
                             <!--Image Box-->
-                            <figure class="image-box"><img src="images/slides/13.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" alt=""></figure>
                             <div class="overlay-box">
                                 <div class="inner-content">
                                     <div class="content">
-                                        <h3><a href="test_cases.php">see all Building case studies</a></h3>
-                                        <a class="arrow lightbox-image" href="images/slides/13.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
+                                        <h3><a href="test_cases.php?tid=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
+                                        <a class="arrow lightbox-image" href="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" title="Buildings"><span class="icon flaticon-cross-4"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                
-                <!--Column-->
-                <div class="column mix mix_all environment eco animals col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/slides/13.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="test_cases.php">see all Building case studies</a></h3>
-                                        <a class="arrow lightbox-image" href="images/slides/13.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Column-->
-                <div class="column mix mix_all environment eco energy animals plants col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/slides/13.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="test_cases.php">see all Building case studies</a></h3>
-                                        <a class="arrow lightbox-image" href="images/slides/13.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Column-->
-                <div class="column mix mix_all energy animals plants col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/slides/13.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="test_cases.php">see all Building case studies</a></h3>
-                                        <a class="arrow lightbox-image" href="images/slides/13.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php }?>
                 </div>
                 
                 
                 <!--Column-->
-                <div class="column mix mix_all environment eco energy animals plants col-md-4 col-sm-6 col-xs-12">
+                <?php $getCaseStudies3 = "SELECT * FROM industry_case_studies WHERE industry_id = 5 AND status = 0";
+                      $getImgs3 = $conn->query($getCaseStudies3); 
+                ?>
+                <div class="column mix mix_all environment animals col-md-4 col-sm-6 col-xs-12">
                     <!--Default Portfolio Item-->
+                    <?php while($row = $getImgs3->fetch_assoc()) { ?>
                     <div class="default-portfolio-item">
                         <div class="inner-box text-center">
                             <!--Image Box-->
-                            <figure class="image-box"><img src="images/slides/13.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" alt=""></figure>
                             <div class="overlay-box">
                                 <div class="inner-content">
                                     <div class="content">
-                                        <h3><a href="test_cases.php">see all Building case studies</a></h3>
-                                        <a class="arrow lightbox-image" href="images/slides/13.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
+                                        <h3><a href="test_cases.php?tid=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
+                                        <a class="arrow lightbox-image" href="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" title="Buildings"><span class="icon flaticon-cross-4"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                 </div>
+                
+                <!--Column-->
+                <?php $getCaseStudies4 = "SELECT * FROM industry_case_studies WHERE industry_id = 6 AND status = 0";
+                      $getImgs4 = $conn->query($getCaseStudies4); 
+                ?>
+                <div class="column mix mix_all  eco energy col-md-4 col-sm-6 col-xs-12">
+                    <!--Default Portfolio Item-->
+                    <?php while($row = $getImgs4->fetch_assoc()) { ?>
+                    <div class="default-portfolio-item">
+                        <div class="inner-box text-center">
+                            <!--Image Box-->
+                            <figure class="image-box"><img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" alt=""></figure>
+                            <div class="overlay-box">
+                                <div class="inner-content">
+                                    <div class="content">
+                                        <h3><a href="test_cases.php?tid=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
+                                        <a class="arrow lightbox-image" href="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" title="Buildings"><span class="icon flaticon-cross-4"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }?>
+                </div>
+                
+                <!--Column-->
+                <?php $getCaseStudies4 = "SELECT * FROM industry_case_studies WHERE industry_id = 3 AND status = 0";
+                      $getImgs4 = $conn->query($getCaseStudies4); 
+                ?>
+                <div class="column mix mix_all environment eco energy plants col-md-4 col-sm-6 col-xs-12">
+                    <!--Default Portfolio Item-->
+                    <?php while($row = $getImgs4->fetch_assoc()) { ?>
+                    <div class="default-portfolio-item">
+                        <div class="inner-box text-center">
+                            <!--Image Box-->
+                            <figure class="image-box"><img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" alt=""></figure>
+                            <div class="overlay-box">
+                                <div class="inner-content">
+                                    <div class="content">
+                                        <h3><a href="test_cases.php?tid=<?php echo $row['id'];?>"><?php echo $row['title'];?></a></h3>
+                                        <a class="arrow lightbox-image" href="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" title="Buildings"><span class="icon flaticon-cross-4"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }?>
+                </div>
+                
+                
+                <!--Column-->
                 
             </div>
             
         </div>
     </section>
         
-     <section class="blog-news-section latest-news" style="margin-top:-100px">
+     <section class="blog-news-section latest-news" style="margin-top:-150px">
         <?php include_once 'our_clients.php';?>
     </section>  
     <!--Sponsors Section-->
