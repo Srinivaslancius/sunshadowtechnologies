@@ -1839,7 +1839,7 @@ ul,li{
 	position:relative;
 	display:block;
 	float:left;
-	width:50%;
+	width: 100%;
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center center;
@@ -1961,12 +1961,12 @@ ul,li{
 
 .two-column-fluid .right-column .outer-box{
 	position:relative;
-	padding:0px 0px 0px 100px;	
+	padding:0px 0px 0px 100px;
 }
 
 .two-column-fluid .right-column .content-box{
 	padding:75px 15px 80px 80px;
-	max-width:600px;
+	/* max-width:600px; */
 }
 
 .two-column-fluid .right-column:before{
@@ -2030,7 +2030,8 @@ ul,li{
 	position:relative;
 	margin-bottom:20px;
 	color:#e8e8e8;
-	font-size:15px;	
+	font-size:15px;
+	/* width: 100%; */
 }
 
 .two-column-fluid .right-column .info{

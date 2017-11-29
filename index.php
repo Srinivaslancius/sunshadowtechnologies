@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="page-wrapper">
- 	
+    
     <!-- Preloader -->
    
     
@@ -24,11 +24,11 @@
     
     <!--Main Slider-->
  <section class="main-slider revolution-slider">
-    	
+        
         <div class="tp-banner-container">
             <div class="tp-banner">
                 <ul>
-                	<?php $getBannersData = getAllDataCheckActive('banners',0);  ?>
+                    <?php $getBannersData = getAllDataCheckActive('banners',0);  ?>
                     <?php while ($row = $getBannersData->fetch_assoc()) { ?>
                     <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo $base_url . 'uploads/banner_images/'.$row['banner'] ?>"  data-saveperformance="off"  data-title="<?php echo $row['title'];?>">
                     <img src="<?php echo $base_url . 'uploads/banner_images/'.$row['banner'] ?>"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
@@ -69,18 +69,18 @@
     
     <!--Main Features-->
     <section class="main-features">
-    	<div class="auto-container">
-        	<div class="title-box text-center">
-            	<h2>Industries</h2>
+        <div class="auto-container">
+            <div class="title-box text-center">
+                <h2>Industries</h2>
             <div class="row clearfix">
-            	
+                
                 <!--Feature Column-->
                 <?php $getIndustriesData = getAllDataCheckActive('industries',0);?>
                 <?php while ($row = $getIndustriesData->fetch_assoc()) { ?>
                 <div class="features-column col-lg-2 col-md-6 col-xs-12">
-                	<article class="inner-box">
-                    	<div class="icon-box">
-                        	<div class="icon"><span><img style="width:50px;height:50px;" src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>"  alt=""/> </span></div>
+                    <article class="inner-box">
+                        <div class="icon-box">
+                            <div class="icon"><span><img style="width:50px;height:50px;" src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>"  alt=""/> </span></div>
                             <h3 class="title"><?php echo wordwrap($row['title'],14,"<br>\n",TRUE); ?></h3>
                         </div>
                     </article>
@@ -93,10 +93,10 @@
     
     <!--Featured Fluid Section-->
     <section class="featured-fluid-section">
-    	<?php $getContentData = getAllDataCheckActive1('content_pages','0',14);
+        <?php $getContentData = getAllDataCheckActive1('content_pages','0',14);
         $getData = $getContentData->fetch_assoc(); ?>
         
-    	<div class="outer clearfix">
+        <div class="outer clearfix">
             
             <!--Image Column-->
             <div class="image-column" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>);"></div>
@@ -104,11 +104,11 @@
             <!--Text Column-->
             <article class="column text-column dark-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image:url(images/resource/fluid-image-2.jpg);">
                 
-                <div class="content-box pull-left">	
+                <div class="content-box pull-left"> 
                     <h2> <span><?php echo $getData['title']; ?></span> </h2>
-                <!--	<div class="title-text">Lorem ipsum dolor <a href="#"><strong>some link</strong></a> sit amet, cum at inani interesset </div>-->
+                <!--    <div class="title-text">Lorem ipsum dolor <a href="#"><strong>some link</strong></a> sit amet, cum at inani interesset </div>-->
                     <div class="text"><?php echo substr(strip_tags($getData['description']), 0,150);?></div>
-					
+                    
                 <!--    <a href="#" class="theme-btn btn-style-one">Join Now</a>
                     <a href="#" class="theme-btn btn-style-two">View details</a>-->
                 </div>
@@ -123,67 +123,27 @@
     
     <!--Recent Projects Section-->
     <section class="recent-projects">
-    	 <?php include_once 'sample_heading.php';?>   
+         <?php include_once 'sample_heading.php';?>   
     </section>
     
     
     <!--Two Column Fluid -->
     <section class="two-column-fluid">
-    	
         
-    	<div class="outer clearfix">
-        	
+        
+        <div class="outer clearfix">
             
-            <article class="column left-column" style="background-image:url(images/resource/fluid-image-3.jpg);">
-                <?php $getContentData11 = getAllDataCheckActive1('content_pages','0',15);
-                    $getData11 = $getContentData11->fetch_assoc(); ?>
-                <div class="content-box pull-right">	
-                    <h2><span class="normal-font theme_color"><?php echo $getData11['title']; ?></span></h2>
-                    <!-- <div class="title-text">Lorem ipsum dolor some link sit amet, cum at inani interesset</div> -->
-                    <div class="text"><?php echo substr(strip_tags($getData11['description']), 0,150);?></div>
-                    <br>
-                    <?php 
-                    $getAllSiteSettingsData = getAllData('site_settings');
-                    $getSiteSettingsData = $getAllSiteSettingsData->fetch_assoc();
-                    /*echo $getSiteSettingsData; die;*/ ?> 
-                    <div class="clearfix">
-                    	<div class="icon-box">
-                        	<div class="icon"><span class="flaticon-shapes-1"></span></div>
-                            <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="7845910" data-speed="1500"><?php echo $getSiteSettingsData['credit_count']; ?></span></h4>
-                                <span class="title">Raised</span>
-                            </div>
-                        </div>
-                        
-                        <div class="icon-box">
-                        	<div class="icon"><span class="flaticon-tool-4"></span></div>
-                            <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="13360" data-speed="1500"><?php echo $getSiteSettingsData['project_count']; ?></span></h4>
-                                <span class="title">Projects</span>
-                            </div>
-                        </div>
-                        
-                        <div class="icon-box">
-                        	<div class="icon"><span class="flaticon-favorite"></span></div>
-                            <div class="lower-box">
-                            	<h4>$<span class="count-text" data-stop="78459" data-speed="1500"><?php echo $getSiteSettingsData['likes_count']; ?></span></h4>
-                                <span class="title">Donations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="clearfix"></div>
-            </article>
+            
+            
             <?php $getContentData12 = getAllDataCheckActive1('content_pages','0',16);
                     $getData12 = $getContentData12->fetch_assoc(); ?>
             <?php $getContentData13 = getAllDataCheckActive1('content_pages','0',17);
                     $getData13 = $getContentData13->fetch_assoc(); ?>
             <article class="column right-column" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getData12['image'] ?>););">
                 
-                <div class="content-box pull-left">	
-                	<div class="outer-box">
-                    	<div class="quote-icon"><span class="fa fa-quote-left"></span></div>
+                <div class="content-box pull-left"> 
+                    <div class="outer-box">
+                        <div class="quote-icon"><span class="fa fa-quote-left"></span></div>
                         <h2><?php echo $getData12['title']; ?><span class="normal-font"></span></h2>
                         
                         <!--Text Content-->
@@ -214,7 +174,7 @@
     
     <!--Testimonials-->
     <section class="testimonials-section" style="background-image:url(images/slides/2.jpg);">
-		<div class="auto-container">
+        <div class="auto-container">
             
             <div class="sec-title text-center">
                 <h2>OUR <span class="normal-font theme_color">FEATURES</span></h2>
@@ -222,15 +182,15 @@
             </div>
             
             <!--Slider-->     
-        	<div class="testimonials-slider testimonials-carousel">
-            	
+            <div class="testimonials-slider testimonials-carousel">
+                
                 <?php $getFeaturesData = getAllDataCheckActive('features',0);?>
                 <?php while ($row = $getFeaturesData->fetch_assoc()) { ?>
                 <article class="slide-item">
-                	
+                    
                     <div class="info-box">
-                    	<figure class="image-box"><img src="<?php echo $base_url . 'uploads/feature_images/'.$row['image'] ?>" alt=""></figure>
-                    	<h3><?php echo $row['title']; ?></h3>
+                        <figure class="image-box"><img src="<?php echo $base_url . 'uploads/feature_images/'.$row['image'] ?>" alt=""></figure>
+                        <h3><?php echo $row['title']; ?></h3>
                         <p class="designation"></p>
                     </div><br>                   
                     <div class="slide-text">
@@ -245,10 +205,10 @@
     </section>
   
     <section class="events-section latest-events">
-    	 <?php include_once 'latest_news.php';?>
+         <?php include_once 'latest_news.php';?>
     </section>
      <section class="blog-news-section latest-news" style="margin-top:-111px">
-    	 <?php include_once 'our_clients.php';?>
+         <?php include_once 'our_clients.php';?>
     </section>
     <!--Sponsors Section-->
   <section class="sponsors-section" style="margin-top:-100px">
@@ -256,18 +216,18 @@
     </section>
     <!--Parallax Section-->
     <section class="parallax-section" style="background-image:url(images/slides/4.jpg);">
-    	 <?php include_once 'parallax.php';?> 
+         <?php include_once 'parallax.php';?> 
     </section>
     
     
     <!--Intro Section-->
     <section class="subscribe-intro">
-    	 <?php include_once 'newsletter.php';?> 
+         <?php include_once 'newsletter.php';?> 
     </section>
-	
+    
     
     <!--Main Footer-->
-    <footer class="main-footer" style="background-image:url(images/background/footer-bg.jpg);">    	
+    <footer class="main-footer" style="background-image:url(images/background/footer-bg.jpg);">     
       <?php include_once 'footer.php';?>          
     </footer>
     
