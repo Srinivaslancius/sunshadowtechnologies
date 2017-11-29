@@ -29,9 +29,9 @@ if (!isset($_POST['newsletter']))  {
                 $getSiteSettingsData = $getAllSiteSettingsData->fetch_assoc();
             ?> 
                                 <div class="footer-widget about-widget">
-                                    <div class="logo"><a href="index.php"><img src="images/slides/logo1.png" class="img-responsive" alt=""></a></div>
+                                    <div class="logo"><a href="index.php"><img src="<?php echo $base_url . 'uploads/logo/'.$getSiteSettingsData['logo'] ?>" class="img-responsive" alt=""></a></div>
                                     <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, eu me.</p>
+                                        <p></p>
                                     </div>
                                     
                                     <ul class="contact-info">
@@ -89,7 +89,7 @@ if (!isset($_POST['newsletter']))  {
                     <div class="col-md-4 col-sm-12 col-xs-12">
                     	
                     		<!--Footer Column-->
-                        	<?php $getAllNewsData ="SELECT * FROM news WHERE status=0 LIMIT 2 "; 
+                        	<?php $getAllNewsData ="SELECT * FROM news  WHERE status=0 LIMIT 2 "; 
                             $getNewsData = $conn->query($getAllNewsData);
                             ?>
                             	<div class="footer-widget news-widget">
