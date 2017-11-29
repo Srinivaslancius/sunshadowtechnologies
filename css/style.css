@@ -93,7 +93,7 @@ a:hover,a:focus,a:visited{
 
 h1,h2,h3,h4,h5,h6 {
 	position:relative;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight:normal;
 	margin:0px;
 	background:none;
@@ -790,7 +790,7 @@ ul,li{
 	position:relative;
 	display:block;
 	/* padding:8px 0px; */
-	font-size:14px;
+	font-size: 13px;
 	color:#444444;
 	line-height:24px;
 	text-transform:uppercase;
@@ -3247,7 +3247,7 @@ ul,li{
 }
 
 .default-text-column h3{
-	font-size:20px;
+	font-size: 17px;
 	font-weight:700;
 	margin-bottom:20px;
 }
@@ -4627,7 +4627,9 @@ img {
 .post {
     padding: 8px 16px;
 	background-color:#6ac610 !important;
-	color: white !important;
+color: white !important;
+}
+	.post p{ text-align:center !important;
 }
 .table .table-bordered{
 	border: 2px solid gray !important;
