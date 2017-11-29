@@ -9,7 +9,7 @@ if (!isset($_POST['submit']))  {
     //Save data into database
     
     $industry_id = $_POST['industry_id'];
-    $Title= $_POST['title'];
+    $title= $_POST['title'];
     $description = $_POST['description'];
     $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
     $status = $_POST['status'];
@@ -22,7 +22,7 @@ if (!isset($_POST['submit']))  {
               $target_dir = "../uploads/inustries_case_studies_images/";
               $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
               $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-              $getImgUnlink = getImageUnlink('banner','banners','id',$id,$target_dir);
+              $getImgUnlink = getImageUnlink('image','industry_case_studies','id',$id,$target_dir);
                 //Send parameters for img val,tablename,clause,id,imgpath for image ubnlink from folder
               if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                     $sql1 = "UPDATE `industry_case_studies` SET industry_id = '$industry_id',title = '$title',description = '$description',image = '$fileToUpload',status='$status' WHERE id = '$id' ";
@@ -93,6 +93,14 @@ if (!isset($_POST['submit']))  {
                     <input type="text" class="form-control" id="form-control-2" name="title" placeholder="Title" data-error="Please enter title." required value="<?php echo $getProducts['title'];?>">
                     <div class="help-block with-errors"></div>
                   </div>
+                  <div class="form-group">
+                    <label for="form-control-4" class="control-label">Image</label>
+                    <img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$getProducts['image'] ?>"  id="output" height="100" width="100"/>
+                    <label class="btn btn-default file-upload-btn">
+                        Choose file...
+                        <input id="form-control-22" class="file-upload-input" type="file" accept="image/*" name="fileToUpload" id="fileToUpload"  onchange="loadFile(event)"  multiple="multiple" >
+                      </label>
+                  </div>Image
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Description</label>
                     <textarea name="description" class="form-control" id="description" data-error="Please enter a valid email address." required><?php echo $getProducts['description'];?></textarea>
