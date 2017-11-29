@@ -92,7 +92,7 @@
     
     
     <!--Featured Fluid Section-->
-    <section class="featured-fluid-section">
+    <section class="featured-fluid-section" style="margin-top:-100px">
         <?php $getContentData = getAllDataCheckActive1('content_pages','0',14);
         $getData = $getContentData->fetch_assoc(); ?>
         
