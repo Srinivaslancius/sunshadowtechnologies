@@ -64,7 +64,7 @@
             </div>
     	</div>
     </section>
-	    <section class="blog-news-section latest-news" style="margin-top:-150px">
+	    <section class="blog-news-section latest-news">
     	<?php include_once 'our_clients.php';?>
     </section>	
 	<section class="sponsors-section" style="margin-top:-100px">
