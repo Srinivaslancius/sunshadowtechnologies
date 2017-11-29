@@ -7,32 +7,46 @@ if (!isset($_POST['submit']))  {
     //Save data into database
   //echo "<pre>";print_r($_POST); exit;
     $industry_id = $_POST['industry_id'];
+    $title= $_POST['title'];
+    $description = $_POST['description'];
+    $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
     $status = $_POST['status'];
     $created_at = date("Y-m-d h:i:s");
     
     //save product images into product_images table    
     
-    $sql1 = "INSERT INTO industry_case_studies (`industry_id`, `status`,`created_at`) VALUES ('$industry_id','$status','$created_at')";
-    $result1 = $conn->query($sql1);
-    $last_id = $conn->insert_id;
+            if($fileToUpload!='') {
 
-    $product_images = $_FILES['product_images']['name'];
-    foreach($product_images as $key=>$value){
+                $target_dir = "../uploads/inustries_case_studies_images/";
+                $target_file = $target_dir . basename($fileToUpload);
+                $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
-        $product_images1 = $_FILES['product_images']['name'][$key];
-        $file_tmp = $_FILES["product_images"]["tmp_name"][$key];
-        $file_destination = '../uploads/case_studies_images/' . $product_images1;
-        move_uploaded_file($file_tmp, $file_destination);        
-        $sql = "INSERT INTO industry_images ( `industry_id`,`industry_images`) VALUES ('$last_id','$product_images1')";
-        $result = $conn->query($sql);
-    }
-    
-    if( $result1 == 1){
-    echo "<script type='text/javascript'>window.location='case_studies.php?msg=success'</script>";
-    } else {
-       echo "<script type='text/javascript'>window.location='case_studies.php?msg=fail'</script>";
-    }
-}
+                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                    $sql1 = "INSERT INTO industry_case_studies (`industry_id`,`title`,`description`,`image`,`created_at`,`status`) VALUES ('$industry_id','$title','$description','$fileToUpload','$created_at','$status')";
+                    $result1 = $conn->query($sql1);
+                    $last_id = $conn->insert_id;
+                } else {
+                        echo "Sorry, there was an error uploading your file.";
+                }
+            }
+
+            
+            $product_images = $_FILES['product_images']['name'];
+            foreach($product_images as $key=>$value){
+                $product_images1 = $_FILES['product_images']['name'][$key];
+                $file_tmp = $_FILES["product_images"]["tmp_name"][$key];
+                $file_destination = '../uploads/case_studies_pdfs/' . $product_images1;
+                move_uploaded_file($file_tmp, $file_destination);        
+                $sql = "INSERT INTO industry_pdfs ( `industry_id`,`industry_pdfs`) VALUES ('$last_id','$product_images1')";
+                $result = $conn->query($sql);
+            }
+
+            if( $result1 == 1){
+            echo "<script type='text/javascript'>window.location='case_studies.php?msg=success'</script>";
+            } else {
+               echo "<script type='text/javascript'>window.location='case_studies.php?msg=fail'</script>";
+            }
+      }
 ?>
 		<div class="site-content">
         <div class="panel panel-default">
@@ -56,11 +70,30 @@ if (!isset($_POST['submit']))  {
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
-                    <label for="form-control-4" class="control-label">Product Images</label>
+                    <label for="form-control-2" class="control-label">Title</label>
+                    <input type="text" class="form-control" id="form-control-2" name="title" placeholder="Title" data-error="Please enter title." required>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-control-4" class="control-label">Image</label>
                     <img id="output" height="100" width="100"/>
                     <label class="btn btn-default file-upload-btn">
+                      Choose file...
+                        <input id="form-control-22" class="file-upload-input" type="file" accept="image/*" name="fileToUpload" id="fileToUpload"  onchange="loadFile(event)"  multiple="multiple" required >
+                      </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-control-2" class="control-label">Description</label>
+                    <textarea name="description" class="form-control" id="description" placeholder="Description" data-error="Please enter Description." required></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="form-control-4" class="control-label">Pdfs</label>
+                    
+                    <label class="btn btn-default file-upload-btn">
                     Choose file...
-                          <input id="product_images" class="file-upload-input" type="file" accept="image/*" name="product_images[]" id="product_images"  onchange="loadFile(event)"  multiple="multiple" required >
+                          <input id="product_images" class="file-upload-input" type="file" accept=".pdf,.doc" name="product_images[]" id="product_images"    multiple="multiple" required >
                       </label>
                       <!-- <a style="cursor:pointer" id="add_more" class="add_field_button">Add More Fields</a> -->
                   </div>
@@ -95,23 +128,16 @@ if (!isset($_POST['submit']))  {
    <script src="js/multi_image_upload.js"></script>
    <link rel="stylesheet" type="text/css" href="css/multi_image_upload.css">
    <!-- Below script for ck editor -->
+<!-- Below script for ck editor -->
 <script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
 <script>
-    //CKEDITOR.replace( 'key_features' );
-    CKEDITOR.replace( 'product_info' );
+    CKEDITOR.replace( 'description' );
 </script>
-<script type="text/javascript">
-function getSubCategories(val) {
-    $.ajax({
-    type: "POST",
-    url: "get_sub_categories.php",
-    data:'category_id='+val,
-    success: function(data){
-        $("#sub_category_id").html(data);
+<style type="text/css">
+    .cke_top, .cke_contents, .cke_bottom {
+        border: 1px solid #333;
     }
-    });
-}
-</script>
+</style>
 
 
 

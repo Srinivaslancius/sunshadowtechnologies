@@ -8,20 +8,42 @@ if (!isset($_POST['submit']))  {
 } else  {
     //Save data into database
     
-    //$t = time();
     $industry_id = $_POST['industry_id'];
+    $Title= $_POST['title'];
+    $description = $_POST['description'];
+    $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
     $status = $_POST['status'];
-       
-    
+    $created_at = date("Y-m-d h:i:s");
+    $status = $_POST['status'];
     
 
-    $sql1 = "UPDATE industry_case_studies SET industry_id = '$industry_id',status = '$status' WHERE id = '$id'"; 
+    if($_FILES["fileToUpload"]["name"]!='') {
+              $fileToUpload = $_FILES["fileToUpload"]["name"];
+              $target_dir = "../uploads/inustries_case_studies_images/";
+              $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+              $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+              $getImgUnlink = getImageUnlink('banner','banners','id',$id,$target_dir);
+                //Send parameters for img val,tablename,clause,id,imgpath for image ubnlink from folder
+              if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                    $sql1 = "UPDATE `industry_case_studies` SET industry_id = '$industry_id',title = '$title',description = '$description',image = '$fileToUpload',status='$status' WHERE id = '$id' ";
+                    if($conn->query($sql1) === TRUE){
+                       echo "Record updated successfully";
+                    } else {
+                       echo "Record not updated successfully";
+                    }
+                    //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+                } else {
+                    echo "Sorry, there was an error uploading your file.";
+                }
+            }  else {
+                $sql1 = "UPDATE `industry_case_studies` SET industry_id = '$industry_id',title = '$title',description = '$description',status='$status' WHERE id = '$id' ";
+                if($conn->query($sql1) === TRUE){
+                   echo "Record updated successfully";
+                } else {
+                   echo "Record not updated successfully";
+                }
+            }   
     
-    if ($conn->query($sql1) === TRUE) {
-    echo "Record updated successfully";
-    } else {
-    echo "Error updating record: " . $conn->error;
-    }
     $result1=$conn->query($sql1);
     
     $product_images = $_FILES['product_images']['name'];
@@ -29,10 +51,10 @@ if (!isset($_POST['submit']))  {
 
         $product_images1 = $_FILES['product_images']['name'][$key];
         $file_tmp = $_FILES["product_images"]["tmp_name"][$key];
-        $file_destination = '../uploads/case_studies_images/' . $product_images1;
+        $file_destination = '../uploads/case_studies_pdfs/' . $product_images1;
         if($product_images1!=''){
             move_uploaded_file($file_tmp, $file_destination);        
-            $sql = "INSERT INTO industry_images ( `industry_id`,`industry_images`) VALUES ('$id','$product_images1')";
+            $sql = "INSERT INTO industry_pdfs ( `industry_id`,`industry_pdfs`) VALUES ('$id','$product_images1')";
             $result = $conn->query($sql);
         }        
     }
@@ -67,11 +89,21 @@ if (!isset($_POST['submit']))  {
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
+                    <label for="form-control-2" class="control-label">Title</label>
+                    <input type="text" class="form-control" id="form-control-2" name="title" placeholder="Title" data-error="Please enter title." required value="<?php echo $getProducts['title'];?>">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-control-2" class="control-label">Description</label>
+                    <textarea name="description" class="form-control" id="description" data-error="Please enter a valid email address." required><?php echo $getProducts['description'];?></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
                       <?php  $pid = $_GET['pid'];                                                           
-                      $sql = "SELECT id,industry_images FROM industry_images where industry_id = '$pid' ";
+                      $sql = "SELECT id,industry_pdfs FROM industry_pdfs where industry_id = '$pid' ";
                       $getImages= $conn->query($sql);                                                             
                       while($row=$getImages->fetch_assoc()) {
-                          echo "<img id='output_".$row['id']."' src= '../uploads/case_studies_images/".$row['industry_images']."' width=80px; height=80px;/> <a style='cursor:pointer' class='ajax_img_del' id=".$row['id'].">Delete</a> <br />";
+                          echo "<input type='text' value='".$row['industry_pdfs']."' class='ajax_img_del' />&nbsp;&nbsp;<a style='cursor:pointer' class='ajax_img_del' id=".$row['id'].">Delete</a></br></br>";
                       }                               
                      ?>
                   </div>
@@ -79,9 +111,9 @@ if (!isset($_POST['submit']))  {
                   <div id="formdiv">                   
                       <div id="filediv">
                         <?php if($getImages->num_rows > 0){ ?>
-                          <input name="product_images[]" accept="image/*" type="file" id="file" />
+                          <input name="product_images[]" accept=".pdf,.doc" type="file" id="file" />
                          <?php } else { ?>
-                          <input name="product_images[]" accept="image/*" type="file" id="file" required/>
+                          <input name="product_images[]" accept=".pdf,.doc" type="file" id="file" required/>
                          <?php } ?>
 
                       </div><br/>               
@@ -115,9 +147,13 @@ if (!isset($_POST['submit']))  {
    <!-- Below script for ck editor -->
 <script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
 <script>
-    //CKEDITOR.replace( 'key_features' );
-    CKEDITOR.replace( 'product_info' ); 
+    CKEDITOR.replace( 'description' );
 </script>
+<style type="text/css">
+    .cke_top, .cke_contents, .cke_bottom {
+        border: 1px solid #333;
+    }
+</style>
 
 
 <script type="text/javascript">
