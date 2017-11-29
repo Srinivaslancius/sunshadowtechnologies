@@ -10,7 +10,7 @@ $id = $_GET['did'];
             $lkp_location_id = $_POST['lkp_location_id'];
             $description = $_POST['description'];
             $status = $_POST['status'];
-    
+     
         
           if($_FILES["fileToUpload"]["name"]!='' ) {
 

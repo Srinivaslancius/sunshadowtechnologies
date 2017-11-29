@@ -4,7 +4,7 @@
           //If fail
           echo "fail";
         } else  {
-            //If success
+            //If success 
             $category_id = $_POST['category_id'];
             $title = $_POST['title'];
             $description = $_POST['description'];

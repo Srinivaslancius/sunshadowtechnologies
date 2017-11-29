@@ -89,23 +89,22 @@ if (!isset($_POST['newsletter']))  {
                     <div class="col-md-4 col-sm-12 col-xs-12">
                     	
                     		<!--Footer Column-->
-                        	
+                        	<?php $getAllNewsData ="SELECT * FROM news WHERE status=0 LIMIT 2 "; 
+                            $getNewsData = $conn->query($getAllNewsData);
+                            ?>
                             	<div class="footer-widget news-widget">
                                 	<h2>NCK News</h2>	
                                     
                                     <!--News Post-->
+                                    <?php while($getNews = $getNewsData->fetch_assoc()) { ?>
                                     <div class="news-post">
                                     	<div class="icon"></div>
-                                        <div class="news-content"><figure class="image-thumb"><img src="images/slides/8.jpg" alt=""></figure><a href="#">If you need a crown or lorem an implant you will pay it gap it</a></div>
-                                        <div class="time">July 2, 2014</div>
+                                        <div class="news-content"><figure class="image-thumb"><img src="<?php echo $base_url . 'uploads/news_images/'.$getNews['banner'] ?>" alt="<?php echo $getNews['title'];?>"></figure><h4 class="title"><?php echo $getNews['title'];?></h4><?php echo substr($getNews['description'], 0, 150);?></div>
+                                        <!-- <div class="time">July 2, 2014</div> -->
                                     </div>
-                                    
+                                    <?php } ?>
                                     <!--News Post-->
-                                    <div class="news-post">
-                                    	<div class="icon"></div>
-                                        <div class="news-content"><figure class="image-thumb"><img src="images/slides/9.jpg" alt=""></figure><a href="#">If you need a crown or lorem an implant you will pay it gap it</a></div>
-                                        <div class="time">July 2, 2014</div>
-                                    </div>
+                                    
                                     
                                 </div>
                           
