@@ -39,7 +39,7 @@
     <?php
         $getIndId = $getId['id'];
         $id = $_GET['indId'];
-        echo $getIndustries = "SELECT * FROM  industries_test_cases WHERE id = '$id' AND industry_id = '$getIndId' AND status = 0";die;
+        $getIndustries = "SELECT * FROM  industries_test_cases WHERE id = '$id' AND industry_id = 2 AND status = 0";
         $getIndustriesData = $conn->query($getIndustries);
         $getIndustriesAllData  = $getIndustriesData->fetch_assoc();
     ?>

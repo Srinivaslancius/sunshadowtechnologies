@@ -54,7 +54,7 @@
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Image:</div>
-                              <div class="col-sm-6"><img src="<?php echo $base_url . 'uploads/content_images/'.$row['image'] ?>" height="100" width="100"/></div>
+                              <div class="col-sm-6"><img src="<?php echo $base_url . 'uploads/greenmarks_images/'.$row['image'] ?>" height="100" width="100"/></div>
                             </div>
                           </div>
                           <div class="modal-footer">

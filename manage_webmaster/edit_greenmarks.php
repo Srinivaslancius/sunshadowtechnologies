@@ -9,14 +9,13 @@ $id = $_GET['uid'];
         $description = $_POST['description'];
         $status = $_POST['status'];
     
-        
           if($_FILES["fileToUpload"]["name"]!='' ) {
 
             $fileToUpload = $_FILES["fileToUpload"]["name"];
               $target_dir = "../uploads/greenmarks_images/";
               $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
               $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-              $getImgUnlink = getImageUnlink('image','content_pages','id',$id,$target_dir);
+              $getImgUnlink = getImageUnlink('image','green_marks','id',$id,$target_dir);
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
                  $sql = "UPDATE green_marks SET title ='$title', description='$description', image='$fileToUpload', status='$status' WHERE id = '$id' ";
@@ -31,7 +30,7 @@ $id = $_GET['uid'];
                   echo "Sorry, there was an error uploading your file.";
               }
            }else {
-              $sql = "UPDATE `green_marks SET title ='$title', description='$description', status='$status' WHERE id = '$id' ";
+              $sql = "UPDATE green_marks SET title ='$title', description='$description', status='$status' WHERE id = '$id' ";
               if($conn->query($sql) === TRUE){
                  echo "<script type='text/javascript'>window.location='greenmarks.php?msg=success'</script>";
               } else {

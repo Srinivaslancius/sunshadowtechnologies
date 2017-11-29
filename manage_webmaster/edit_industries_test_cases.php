@@ -1,6 +1,6 @@
 <?php include_once 'admin_includes/main_header.php'; ?>
 <?php
-$id = $_GET['uid'];
+$id = $_GET['did'];
  if (!isset($_POST['submit']))  {
             echo "fail";
     } else  {
@@ -71,15 +71,15 @@ $id = $_GET['uid'];
                   </div>
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Description</label>
-                    <textarea name="description" class="form-control" id="description" placeholder="Description" data-error="Please enter Description." required></textarea>
+                    <textarea name="description" class="form-control" id="description" placeholder="Description" data-error="Please enter Description." required><?php echo $getIndName['description'];?></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
-                    <label for="form-control-4" class="control-label">Pdf File</label>
-                    
+                    <label for="form-control-4" class="control-label">Pdf Name</label>
+                    <input type="text" value="<?php echo $getIndName['pdf_image'] ?>"/>
                     <label class="btn btn-default file-upload-btn">
-                      Choose file...
-                        <input id="form-control-22" class="file-upload-input" type="file" accept=".pdf,.doc"  name="fileToUpload" id="fileToUpload"  onchange="loadFile(event)"  multiple="multiple" required >
+                        Choose file...
+                        <input id="form-control-22" class="file-upload-input" type="file" accept=".pdf,.doc" name="fileToUpload" id="fileToUpload"  multiple="multiple" >
                       </label>
                   </div>
                   <?php $getStatus = getDataFromTables('user_status',$status=NULL,$clause=NULL,$id=NULL,$activeStatus=NULL,$activeTop=NULL);?>
@@ -88,9 +88,9 @@ $id = $_GET['uid'];
                     <select id="form-control-3" name="status" class="custom-select" data-error="This field is required." required>
                       <option value="">Select Status</option>
                       <?php while($row = $getStatus->fetch_assoc()) {  ?>
-                        <option value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
+                          <option <?php if($row['id'] == $getIndName['status']) { echo "Selected"; } ?> value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
                       <?php } ?>
-                    </select>
+                   </select>
                     <div class="help-block with-errors"></div>
                   </div>
 
