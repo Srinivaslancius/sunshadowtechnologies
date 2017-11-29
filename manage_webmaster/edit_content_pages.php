@@ -7,7 +7,6 @@ $id = $_GET['uid'];
       
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $status = $_POST['status'];
     
         
           if($_FILES["fileToUpload"]["name"]!='' ) {
@@ -19,7 +18,7 @@ $id = $_GET['uid'];
               $getImgUnlink = getImageUnlink('image','content_pages','id',$id,$target_dir);
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-                 $sql = "UPDATE `content_pages` SET title ='$title', description='$description', image='$fileToUpload', status='$status' WHERE id = '$id' ";
+                 $sql = "UPDATE `content_pages` SET title ='$title', description='$description', image='$fileToUpload' WHERE id = '$id' ";
                   if($conn->query($sql) === TRUE){
 
                      echo "<script type='text/javascript'>window.location='content_pages.php?msg=success'</script>";
@@ -70,17 +69,6 @@ $id = $_GET['uid'];
                         Choose file...
                         <input id="form-control-22" class="file-upload-input" type="file" accept="image/*" name="fileToUpload" id="fileToUpload"  onchange="loadFile(event)"  multiple="multiple" >
                       </label>
-                  </div>
-                  <?php $getStatus = getDataFromTables('user_status',$status=NULL,$clause=NULL,$id=NULL,$activeStatus=NULL,$activeTop=NULL);?>
-                  <div class="form-group">
-                    <label for="form-control-3" class="control-label">Choose your status</label>
-                    <select id="form-control-3" name="status" class="custom-select" data-error="This field is required." required>
-                      <option value="">Select Status</option>
-                      <?php while($row = $getStatus->fetch_assoc()) {  ?>
-                          <option <?php if($row['id'] == $getContentData1['status']) { echo "Selected"; } ?> value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
-                      <?php } ?>
-                   </select>
-                    <div class="help-block with-errors"></div>
                   </div>
                   <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
                 </form>

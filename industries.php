@@ -50,7 +50,7 @@
                         	<div class="icon"><span><img style="width:50px;height:50px;" src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>"  alt=""/></span></div>
                         </div>
                         <h3><?php echo $row['title'];?></h3>
-                        <div class="text"><?php echo substr(strip_tags($row['description']), 0,100);?></div>
+                        <div class="text"><?php echo substr(strip_tags($row['description']), 0,100);?></div></br>
                         <a href="industries_details.php?indId=<?php echo $row['id'];?>" class="theme-btn btn-style-three">Read More</a>
                     </article>
                 </div>
