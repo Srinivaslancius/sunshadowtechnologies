@@ -32,28 +32,37 @@
             </div>
         </div>
     </section>
-    <?php $getIndustries = "SELECT * FROM industries WHERE status='0' "; 
+    <?php
+        $id = $_GET['indId'];   
+        $getIndustries = "SELECT * FROM industries WHERE id = '$id' AND status = 0 "; 
         $getIndustriesData = $conn->query($getIndustries);
-        while($getId = $getIndustriesData->fetch_assoc()){
+        $getId = $getIndustriesData->fetch_assoc();
+        $getIndId = $getId['id'];
     ?>
     <?php
-        $getIndId = $getId['id'];
         $id = $_GET['indId'];
-        $getIndustries = "SELECT * FROM  industries_test_cases WHERE id = '$id' AND industry_id = 2 AND status = 0";
+        $getIndustries = "SELECT * FROM  industries_test_cases WHERE industry_id = '$getIndId' AND status = 0";
         $getIndustriesData = $conn->query($getIndustries);
-        $getIndustriesAllData  = $getIndustriesData->fetch_assoc();
+        //$getIndustriesAllData  = $getIndustriesData->fetch_assoc();
     ?>
     <!--Main Features-->
     <section class="main-features">
     	<div class="auto-container">
      <div class="title-box">
             	<!--<h1>Services</h1>-->
-           	<h3><b><?php echo $getIndustriesAllData['title'];?></b></h3><br>
-                   <?php echo $getIndustriesAllData['description'];?>
+           	<h3><b><?php echo $getId['title'];?>&nbsp;Test Cases</b></h3><br>
+                   <?php echo $getId['description'];?>
             <article class="inner-box">
+                <?php if($getIndustriesData->num_rows > 0) { ?>
+                <?php while($getIndustriesAllData  = $getIndustriesData->fetch_assoc()){ ?>
                         <figure class="image-box">
-                            <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><img style="width:55px;height:55px;"src="images/gallery/pdf1.png" alt=""></a>   
+                            <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><span style="color:#000;">Case Studies PDF:&nbsp;&nbsp;</span><img style="width:40px;height:40px;"src="images/gallery/pdf1.png" alt=""></a>   
                         </figure>
+                        <?php } }
+                        else { ?> 
+                        <div style="text-align:left">
+                                <h3>PDF Files Not Found!</h3>
+                        </div> <?php }?>
                         <div class="content-box">
                             <h4 style="font-size:15px; text-align:center"><a href="#"><?php echo $getIndustriesAllData['title']; ?></a></h4>
                             
@@ -64,7 +73,6 @@
 	</div>
         </div>
     </section>
-     <?php }?>
      <section class="blog-news-section latest-news" style="margin-top:-150px">
     	<?php include_once 'our_clients.php';?>
     </section>	
