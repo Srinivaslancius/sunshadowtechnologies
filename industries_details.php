@@ -53,11 +53,16 @@
            	<h3><b><?php echo $getId['title'];?>&nbsp;Test Cases</b></h3><br>
                    <?php echo $getId['description'];?>
             <article class="inner-box">
+                <?php if($getIndustriesData->num_rows > 0) { ?>
                 <?php while($getIndustriesAllData  = $getIndustriesData->fetch_assoc()){ ?>
                         <figure class="image-box">
                             <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><span style="color:#000;">Case Studies PDF:&nbsp;&nbsp;</span><img style="width:40px;height:40px;"src="images/gallery/pdf1.png" alt=""></a>   
                         </figure>
-                        <?php }?>
+                        <?php } }
+                        else { ?> 
+                        <div style="text-align:left">
+                                <h3>PDF Files Not Found!</h3>
+                        </div> <?php }?>
                         <div class="content-box">
                             <h4 style="font-size:15px; text-align:center"><a href="#"><?php echo $getIndustriesAllData['title']; ?></a></h4>
                             
