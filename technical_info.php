@@ -22,14 +22,14 @@
         <?php include_once 'menu.php';?>
     </header><!--End Main Header -->
     
-    <?php $getTechnicalInfoData = getAllDataCheckActive1('content_pages','0',19);
-          $getData = $getTechnicalInfoData->fetch_assoc(); ?>
+    <?php $getTechnicalInfoData = getAllDataCheckActive1('content_pages','0',24);
+          $getTechnical = $getTechnicalInfoData->fetch_assoc(); ?>
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getData['image'] ?>);">
+    <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getTechnical['image'] ?>);">
         <div class="auto-container">
             <div class="sec-title">
-                <h1><?php echo $getData['title'];?></h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current"><?php echo $getData['title'];?></a></div>
+                <h1><?php echo $getTechnical['title'];?></h1>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="" class="current"><?php echo $getTechnical['title'];?></a></div>
             </div>
         </div>
     </section>
