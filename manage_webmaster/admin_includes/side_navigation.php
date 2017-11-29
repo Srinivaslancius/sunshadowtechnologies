@@ -117,14 +117,14 @@
                 <span class="menu-text">Our Team</span>
               </a>
             </li>
-            <!-- <li  class="<?php if($page_name == 'projects.php' || $page_name == 'add_projects.php' || $page_name == 'edit_projects.php') { echo "active"; } ?>">
-              <a href="projects.php" aria-haspopup="true">
+            <li  class="<?php if($page_name == 'products.php' || $page_name == 'add_products.php' || $page_name == 'edit_products.php') { echo "active"; } ?>">
+              <a href="products.php" aria-haspopup="true">
                 <span class="menu-icon">
                    <i class="zmdi zmdi-collection-image  zmdi-hc-fw"></i>
                 </span> 
-                <span class="menu-text">Projects</span>
+                <span class="menu-text">Products</span>
               </a>
-            </li> -->
+            </li>
             <li  class="<?php if($page_name == 'content_pages.php' || $page_name == 'add_content_pages.php' || $page_name == 'edit_content_pages.php') { echo "active"; } ?>">
               <a href="content_pages.php" aria-haspopup="true">
                 <span class="menu-icon">

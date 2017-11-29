@@ -16,8 +16,7 @@
     <!-- Preloader -->
    
     
-    <?php $getBanner = getAllDataCheckActive1('content_pages','0',27);
-    $getBannerImage = $getBanner->fetch_assoc(); ?>
+    
     <!-- Main Header -->
     <header class="main-header">
         <?php include_once 'menu.php';?>
@@ -30,11 +29,14 @@ if(!empty($_POST['name_contact']) && !empty($_POST['email_contact']) && !empty($
     $email_contact = $_POST['email_contact'];
     $phone_contact = $_POST['text'];
     $message_contact = $_POST['message_contact'];
+    $created_at = date("Y-m-d h:i:s");
+        $sql = "INSERT INTO customer_enqueries (`customer_name`,`customer_email`,`message`,`customer_feedback`,`created_at`) VALUES ('$name_contact','$email_contact','$phone_contact','$message_contact','$created_at')";
+        $conn->query($sql);
 
     $dataem = $getSiteSettingsData["email"];
 //$to = "srinivas@lanciussolutions.com";
 $to = "$dataem";
-$subject = "Adgreencost - Contact Us ";
+$subject = "Sun Shadow Technologies - Contact Us ";
 $message = "";
 $message .= "<style>
         .body{
@@ -92,7 +94,7 @@ $message .= "<style>
     }
     </style>";
 
-$message .= "<html><head><title>Adgreencost Contactus Form</title></head>
+$message .= "<html><head><title>Sun Shadow Technologies Contactus Form</title></head>
 <body>
         <div class='container header'>
             <div class='row'>
@@ -134,6 +136,8 @@ if(mail($to,$subject,$message,$headers)) {
 }
 ?>
     <!--Page Title-->
+    <?php $getBanner = getAllDataCheckActive1('content_pages','0',27);
+    $getBannerImage = $getBanner->fetch_assoc(); ?>
     <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getBannerImage['image'] ?>);">
         <div class="auto-container">
             <div class="sec-title">

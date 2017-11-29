@@ -52,7 +52,13 @@
             </div>
         </div>
     </section>
-    
+    <?php $id = $_GET['id']; ?>
+    <?php 
+        $getProItems = "SELECT * FROM products WHERE id = '$id' AND status = 0 ";
+        $getPro = $conn->query($getProItems);
+        $getItem = $getPro->fetch_assoc();
+
+    ?>
     
     <!--Default Section-->
     <section class="default-section">
@@ -62,190 +68,76 @@
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="images/slides/15.png">
-                </div>
-                <div class="item">
-                    <img src="images/slides/16.jpg">
-                </div>
-                <div class="item">
-                    <img src="images/slides/15.png">
-                </div>
-                <div class="item">
-                     <img src="images/slides/16.jpg">
-                </div>
-                <div class="item">
-                   <img src="images/slides/15.png">
-                </div>
-                <div class="item">
-                    <img src="images/slides/16.jpg">
-                </div>
-                <div class="item">
-                   <img src="images/slides/15.png">
-                </div>
-                <div class="item">
-                     <img src="images/slides/16.jpg">
+                    <img src="<?php echo $base_url . 'uploads/product_images/'.$getItem['image'] ?>">
                 </div>
             </div>
         </div> 
-    <div class="clearfix">
-        <div id="thumbcarousel" class="carousel slide" data-interval="false">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="images/slides/15.png"></div>
-                    <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="images/slides/16.jpg"></div>
-                    <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="images/slides/15.png"></div>
-                    <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="images/slides/16.jpg"></div>
-                </div><!-- /item -->
-                <div class="item">
-                    <div data-target="#carousel" data-slide-to="4" class="thumb"><img src="images/slides/15.png"></div>
-                    <div data-target="#carousel" data-slide-to="5" class="thumb"><img src="images/slides/16.jpg"></div>
-                    <div data-target="#carousel" data-slide-to="6" class="thumb"><img src="images/slides/15.png"></div>
-                    <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="images/slides/16.jpg"></div>
-                </div><!-- /item -->
-            </div><!-- /carousel-inner -->
-            <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div> <!-- /thumbcarousel -->
-    </div><!-- /clearfix -->
+    
     </div> <!-- /col-sm-6 -->
     <div class="col-sm-6">
 	
                 <h2 style="font-size:25px"><b>PRODUCT<span class="normal-font theme_color"> DETAILS</span></b></h2><br>
-			
-       <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>ADGREENCOAT ®GPσ KIND</th>
-        <th>(Main Coat 1 & Coat 2)</th>        
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td colspan="2">Top coat / * Global environment-friendly heat-shield coating] "Adgreencoat ®"</td>
-      </tr>
-	  <tr>
-        <td>Kind</td>
-		<td>GP σ 008 (Rose white)<br>
-		GP σ 009 (White)<br>
-		GP σ 200 (Ivory)<br>
-		GP σ 201 (Cream)GP σ 300 (Mint green)<br>
-		GP σ 305 (Apple green)<br>
-		GP σ 100 (Pearl gray)<br>
-		GP σ 400 (Sky blue)<br>
-		GP σ 600 (Rose)<br>
-		GP σ 500 (Brown)<br>
-		</td>
-      </tr>
-	   <tr>
-        <td>Packing</td>
-		<td>13kg/can (10ℓ)</td>
-      </tr>
-	   <tr>
-        <td>The coating number of times	</td>
-		<td>2</td>
-      </tr>
-	  <tr>
-        <td>Contents</td>
-		<td>Acrylic emulsion resin</td>
-      </tr>
-	   <tr>
-        <td>Dilution ratio</td>
-		<td>Drinking water: (0-5%: brush, roller) (5-10%: spray)</td>
-      </tr>
-	  <tr>
-        <td>Contents</td>
-		<td>Acrylic emulsion resin</td>
-      </tr>
-	  <tr>
-        <td colspan="2">*Quantity of 1 standard application becomes quantity of application per once. In addition, two times of main materials become coating.
-		</td>
-      </tr>
-	   <tr>
-        <td colspan="2">*The value of the standard application amount is the standard value of usage. It may vary depending on the conditions of the individual.
+			       <div class="text"><?php echo substr(strip_tags($getItem['description']), 0,200);?></div>
 
-		</td>
-      </tr>
-	  
-    </tbody>
-  </table>
-  <button type="button" class="btn btn-success">ADD TO CART</button>
+             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top: 50px; background-color: #56529c; border: none">Place Order</button>
+     <form method="post" action="save_orders.php">
+                              <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                
+                                  <!-- Modal content-->
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                        
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title" style="color:black;text-align:center;">Place Order</h4>
+                                    </div>
+                                    
+                                    <div class="modal-body">
+                                        <lable>User Name</label> 
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="user_name" required  placeholder="User Name">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                         <lable>Email</label>                                       
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="user_email" required  placeholder="Email">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <lable>Mobile</label>                                       
+                                        <div class="form-group">
+                                          <input type="text" name="user_mobile" class="form-control" id="user_mobile" placeholder="Mobile" data-error="Please enter Correct Mobile Number." required maxlength="10" pattern="[0-9]{10}" onkeypress="return isNumberKey(event)" onkeyup="checkMobile()">
+                                        </div>
+                                        <?php $id = $_GET['id']; 
+                                          $getProducts = "SELECT * FROM products WHERE id = '$id' AND status = 0 "; 
+                                          $proName = $conn->query($getProducts);
+                                          $getPro = $proName->fetch_assoc(); 
+                                          
+                                          ?>
+                                        <lable>Product Name</label>
+                                        <div class="form-group">
+                                            <input type="text" readonly class="form-control" name="title" value="<?php echo $getPro['title'];?>" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                
+                                    </div>
+                                    <div class="modal-footer">
+
+                                      <button type="submit" class="site-button" value="submit" name="submit">Submit</button>
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+
+  
+
     </div> <!-- /col-sm-6 -->
   </div> <!-- /row -->
 </div>
         </div>
     </section>
-    <section class="blog-news-section latest-news" style="margin-top:-100px">
-    	<div class="auto-container">
-         <div class="sec-title text-center">
-                <h2 style="font-size:25px">Related <span class="normal-font theme_color">Products</span></h2><br>
-        	<div class="row clearfix">
-                
-                <!--News Column-->
-               <div class="column blog-news-column col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="card">
-					<figure class="image-box">
-                        	<a href="#"><img src="images/slides/14.jpg" alt=""></a>
-                           <!-- <div class="news-date"><span class="month">NEW</span></div>-->
-                        </figure>
-					  <div class="post">
-						<h4><b>Adgreencoat ®GPσ</b></h4> 
-						<p>₹ 250.00</p> 
-					  </div>
-					</div>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="card">
-					<figure class="image-box">
-                        	<a href="#"><img src="images/slides/14.jpg" alt=""></a>
-                           <!-- <div class="news-date"><span class="month">NEW</span></div>-->
-                        </figure>
-					  <div class="post">
-						<h4><b>Adgreencoat ®GPσ</b></h4> 
-						<p>₹ 250.00</p> 
-					  </div>
-					</div>
-                </div>
-                
-                <!--News Column-->
-               <div class="column blog-news-column col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="card">
-					<figure class="image-box">
-                        	<a href="#"><img src="images/slides/14.jpg" alt=""></a>
-                           <!-- <div class="news-date"><span class="month">NEW</span></div>-->
-                        </figure>
-					  <div class="post">
-						<h4><b>Adgreencoat ®GPσ</b></h4> 
-						<p>₹ 250.00</p> 
-					  </div>
-					</div>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="card">
-					<figure class="image-box">
-                        	<a href="#"><img src="images/slides/14.jpg" alt=""></a>
-                           <!-- <div class="news-date"><span class="month">NEW</span></div>-->
-                        </figure>
-					  <div class="post">
-						<h4><b>Adgreencoat ®GPσ</b></h4> 
-						<p>₹ 250.00</p> 
-					  </div>
-					</div>
-                </div>
-            </div>
-            </div>
-            <!-- Styled Pagination -->
-            
-            
-        </div>
-    </section>
+    
     
     <!--Parallax Section-->
     <section class="parallax-section" style="background-image:url(images/slides/4.jpg);">
@@ -285,3 +177,11 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+<script>
+  function isNumberKey(evt){
+      var charCode = (evt.which) ? evt.which : event.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57))
+          return false;
+      return true;
+  }
+  </script>

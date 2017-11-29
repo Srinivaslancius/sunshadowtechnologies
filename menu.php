@@ -76,6 +76,9 @@
                                <li class="active"><a href="technical_info.php" <?php if($page_name == 'technical_info.php') {  ?> class="check_page" <?php } ?>>Technical Info</a>
                                  
                                 </li>
+                                <li class="active"><a href="products.php" <?php if($page_name == 'products.php') {  ?> class="check_page" <?php } ?>>Products</a>
+                                
+                                </li>
                                 <li class="active"><a href="downloads.php" <?php if($page_name == 'downloads.php') {  ?> class="check_page" <?php } ?>>Downloads</a></li>
                                  <li class="active"><a href="faqs.php" <?php if($page_name == 'faqs.php') {  ?> class="check_page" <?php } ?>>F.A.Q</a></li>
                                 <li class="active"><a href="contact.php" <?php if($page_name == 'contact.php') {  ?> class="check_page" <?php } ?>>Contact</a></li>
