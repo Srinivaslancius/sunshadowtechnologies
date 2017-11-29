@@ -14,7 +14,7 @@ $id = $_GET['did'];
         
           if($_FILES["fileToUpload"]["name"]!='' ) {
 
-            $fileToUpload = $_FILES["fileToUpload"]["name"];
+            $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
               $target_dir = "../uploads/downloads_pdf_images/";
               $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
               $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
