@@ -34,7 +34,7 @@ if (!isset($_POST['newsletter']))  {
                                     </div>
                                     
                                     <ul class="contact-info">
-                                        li><span class="icon fa fa-map-marker"></span> <?php echo $getSiteSettingsData['address']; ?></li>
+                                        <li><span class="icon fa fa-map-marker"></span> <?php echo $getSiteSettingsData['address']; ?></li>
                                         <li><span class="icon fa fa-phone"></span> <a href="Tel:<?php echo $getSiteSettingsData['mobile']; ?>"><?php echo $getSiteSettingsData['mobile']; ?></a></li>
                                         <li><span class="icon fa fa-envelope-o"></span> <a href="mailto:<?php echo $getSiteSettingsData['email'];?>"><?php echo $getSiteSettingsData['email']; ?></a></li>
                                     </ul>
