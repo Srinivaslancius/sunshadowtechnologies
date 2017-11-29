@@ -53,7 +53,7 @@ if (!isset($_POST['newsletter']))  {
                             
                             <!--Footer Column-->
                             <div class="col-sm-4">
-                                <h2>Company</h2><br>
+                                <h2>Quick Links</h2><br>
 								
                                 <div class="footer-widget links-widget">
 								<div class="row">

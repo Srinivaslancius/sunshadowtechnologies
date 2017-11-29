@@ -22,15 +22,18 @@
     	<?php include_once 'menu.php';?>
         
     </header><!--End Main Header -->
+    <?php 
+        $id = $_GET['nid'];
+        $getIndustriesData = getDataFromTables('industries_test_cases',$status=NULL,'id',$id,$activeStatus=NULL,$activeTop=NULL);
+        $getAllIndustriesData  = $getIndustriesData->fetch_assoc();
+    ?>
     
-    <?php $getBanner = getAllDataCheckActive1('content_pages','0',22);
-    $getBannerImage = $getBanner->fetch_assoc(); ?>
     <!--Page Title-->
-      <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getBannerImage['image'] ?>);">
+      <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/news_images/'.$getAllNewsData['banner'] ?>);">
     	<div class="auto-container">
         	<div class="sec-title">
-                <h1><span class="normal-font"><?php echo $getBannerImage['title'];?></span></h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="" class="current"><?php echo $getBannerImage['title'];?></a></div>
+                <h1>Our <span class="normal-font">News</span></h1>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">News</a></div>
             </div>
         </div>
     </section>
@@ -39,27 +42,16 @@
     <!--Main Features-->
     <section class="main-features">
     	<div class="auto-container">
-            
-            <div class="row clearfix">
-            	
-                <!--Default Icon Column-->
-                <?php $getIndustriesData = getAllDataCheckActive('industries',0);?>
-                <?php while ($row = $getIndustriesData->fetch_assoc()) { ?>
-                <div class="default-icon-column col-lg-4 col-md-6 col-xs-12">
-                	<article class="inner-box">
-                    	<div class="icon-box">
-                        	<div class="icon"><span><img style="width:50px;height:50px;" src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>"  alt=""/></span></div>
-                        </div>
-                        <h3><?php echo $row['title'];?></h3>
-                        <div class="text"><?php echo substr(strip_tags($row['description']), 0,100);?></div></br>
-                        <a href="industries_details.php?indId=<?php echo $row['id'];?>" class="theme-btn btn-style-three">Read More</a>
-                    </article>
-                </div>
-               <?php } ?>
-            </div>
+     <div class="title-box">
+            	<!--<h1>Services</h1>-->
+           	<h3><b><?php echo $getAllIndustriesData['title'];?></b></h3><br>
+                   <?php echo $getAllNewsData['description'];?>
+                
+	</div>
         </div>
     </section>
-     <section class="blog-news-section latest-news" style="margin-top:-100px">
+     
+     <section class="blog-news-section latest-news" style="margin-top:-150px">
     	<?php include_once 'our_clients.php';?>
     </section>	
     <!--Sponsors Section-->

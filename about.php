@@ -84,7 +84,7 @@
     
     
     <!--Team Section-->
-    <section class="team-section">
+    <section class="team-section" style="margin-top:-100px">
         <div class="auto-container">
         
             <div class="sec-title text-center">
