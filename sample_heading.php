@@ -2,7 +2,7 @@
 <div class="auto-container">       	
             <div class="sec-title clearfix">
             	<div class="pull-center">
-                    <center><h2>Case<span class="normal-font theme_color">Studies</span></h2></center>
+                    <center><h2>Case<span class="normal-font theme_color">&nbsp;Studies</span></h2></center>
                   <!--  <div class="text">Lorem ipsum dolor sit amet, cum at inani interesset, nisl fugit munere ad mel,vix an omnium dolor amet </div>-->
                 </div>
                <!-- <div class="pull-right padd-top-30">
