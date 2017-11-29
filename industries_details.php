@@ -50,13 +50,16 @@
     	<div class="auto-container">
      <div class="title-box">
             	<!--<h1>Services</h1>-->
-           	<h3><b><?php echo $getId['title'];?>&nbsp;Test Cases</b></h3><br>
-                   <?php echo $getId['description'];?>
+           	
+            <h3><b><?php echo $getId['title'];?><span class="normal-font theme_color"> TEST CASES</span></b></h3><br>
+            <div class="text"><?php echo $getId['description'];?></div>
+                  
             <article class="inner-box">
                 <?php if($getIndustriesData->num_rows > 0) { ?>
                 <?php while($getIndustriesAllData  = $getIndustriesData->fetch_assoc()){ ?>
                         <figure class="image-box">
-                            <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><span style="color:#000;">Case Studies PDF:&nbsp;&nbsp;</span><img style="width:40px;height:40px;"src="images/gallery/pdf1.png" alt=""></a>   
+
+                        <div class="text">Case Studie PDF: <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><?php echo $getIndustriesAllData['pdf_image']; ?></a></div>
                         </figure>
                         <?php } }
                         else { ?> 
@@ -66,8 +69,7 @@
                         <div class="content-box">
                             <h4 style="font-size:15px; text-align:center"><a href="#"><?php echo $getIndustriesAllData['title']; ?></a></h4>
                             
-                          <!--  <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn btn-style-three">Read More</a>-->
+                          
                         </div>
             </article>    
 	</div>
