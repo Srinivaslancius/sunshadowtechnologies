@@ -22,13 +22,14 @@
     	<?php include_once 'menu.php';?>
     </header><!--End Main Header -->
     
-    
+    <?php $getContentData12 = getAllDataCheckActive1('content_pages','0',20);
+    $getBannerDataData = $getContentData12->fetch_assoc(); ?>
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/slides/4.jpg);">
+    <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getBannerDataData['image'] ?>);">
     	<div class="auto-container">
         	<div class="sec-title">
-                <h1>About Us</h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">About Us</a></div>
+                <h1><?php echo $getBannerDataData['title']; ?></h1>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current"><?php echo $getBannerDataData['title']; ?></a></div>
             </div>
         </div>
     </section>

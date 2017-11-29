@@ -16,7 +16,8 @@
     <!-- Preloader -->
    
     
-    
+    <?php $getBanner = getAllDataCheckActive1('content_pages','0',27);
+    $getBannerImage = $getBanner->fetch_assoc(); ?>
     <!-- Main Header -->
     <header class="main-header">
         <?php include_once 'menu.php';?>
@@ -133,11 +134,11 @@ if(mail($to,$subject,$message,$headers)) {
 }
 ?>
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/slides/4.jpg);">
+    <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getBannerImage['image'] ?>);">
         <div class="auto-container">
             <div class="sec-title">
-                <h1>Contact <span class="normal-font">Us</span></h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">Contact Us</a></div>
+                <h1><?php echo $getBannerImage['title'];?> <span class="normal-font"></span></h1>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="" class="current"><?php echo $getBannerImage['title'];?></a></div>
             </div>
         </div>
     </section>
