@@ -15,7 +15,6 @@
                     <th>Title</th>
                     <th>Image</th>
                     <th>Description</th>
-                    <th>Case Studies</th>
                     <th>Status</th>
                     <th>Actions</th>
                   </tr>
@@ -27,7 +26,6 @@
                     <td><?php echo $row['title'];?></td>
                     <td><img src="<?php echo $base_url . 'uploads/industries_images/'.$row['image'] ?>" height="100" width="100"/></td>
                     <td><?php echo substr(strip_tags($row['description']), 0,150);?></td>
-                    <td><?php echo $row['case_studies'];?></td>
                     <td><?php if ($row['status']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['status']." data-tbname='industries'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['status']." data-incId=".$row['id']." data-tbname='industries'>In Active</span>" ;} ?></td>
                     <td> <a href="edit_industries.php?uid=<?php echo $row['id']; ?>"><i class="zmdi zmdi-edit"></i></a> &nbsp; <a href="#"><i class="zmdi zmdi-eye zmdi-hc-fw" data-toggle="modal" data-target="#<?php echo $row['id']; ?>" class=""></i></a></td>
                     <!-- Open Modal Box  here -->
