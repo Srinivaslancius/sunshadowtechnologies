@@ -48,10 +48,10 @@
                     
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="#"><img src="<?php echo $base_url . 'uploads/feature_images/'.$row['image'] ?>" alt=""></a>
+                        	<img src="<?php echo $base_url . 'uploads/feature_images/'.$row['image'] ?>" alt="">
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="#"><?php echo $row['title']; ?></a></h3>
+                        	<h3><?php echo $row['title']; ?></h3>
                           <!--  <div class="column-info">Environment, Go Green Company</div>-->
                             <div class="text"><?php echo substr(strip_tags($row['description']), 0,150);?></div>
                            
