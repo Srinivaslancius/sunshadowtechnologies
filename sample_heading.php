@@ -17,7 +17,7 @@
                 <div class="column default-featured-column col-md-4 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="#"><img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose1['image'] ?>" alt="<?php echo $getChoose1['title'];?>"></a>
+                        	<img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose1['image'] ?>" alt="<?php echo $getChoose1['title'];?>">
                         </figure>
                         <div class="content-box">
                         	<h3><a href="about.php"><?php echo $getChoose1['title'];?></a></h3>
@@ -33,7 +33,7 @@
                 <div class="column default-featured-column col-md-4 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="#"><img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose2['image'] ?>" alt="<?php echo $getChoose2['title'];?>"></a>
+                        	<img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose2['image'] ?>" alt="<?php echo $getChoose2['title'];?>">
                         </figure>
                         <div class="content-box">
                         	<h3><a href="case_studies.php"><?php echo $getChoose2['title'];?></a></h3>
@@ -49,7 +49,7 @@
                 <div class="column default-featured-column col-md-4 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="#"><img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose3['image'] ?>" alt="<?php echo $getChoose3['title'];?>"></a>
+                        	<img src="<?php echo $base_url . 'uploads/content_images/'.$getChoose3['image'] ?>" alt="<?php echo $getChoose3['title'];?>">
                         </figure>
                         <div class="content-box">
                         	<h3><a href="contact.php"><?php echo $getChoose3['title'];?></a></h3>
