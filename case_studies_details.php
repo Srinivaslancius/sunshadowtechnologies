@@ -28,7 +28,7 @@
         <div class="auto-container">
             <div class="sec-title">
                 <h1>Our <span class="normal-font">Case Studies</span></h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="#" class="current">Buildings</a></div>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a class="current">Case Studies</a></div>
             </div>
         </div>
     </section>
