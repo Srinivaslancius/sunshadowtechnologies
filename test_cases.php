@@ -44,7 +44,7 @@
        <?php $getIndNames1 = $getIndNames->fetch_assoc(); ?>     
         <div class="title-box">
             	<!--<h1>Services</h1>-->
-           	<h3><b><?php echo $getIndNames1['title'];?><span class="normal-font theme_color"> TEST CASES</span></b></h3><br>
+           	<h3><b><?php echo $getIndNames1['title'];?><span class="normal-font theme_color">&nbsp;CASE STUDIES</span></b></h3><br>
                 <div class="text"><?php echo $getIndNames1['description'];?></div>
                 <?php $getId = $getIndNames1['id']; $getPdfs = "SELECT * FROM industry_pdfs WHERE industry_id =  '$getId' ";
                       $getPdfsImgs = $conn->query($getPdfs);
@@ -55,7 +55,7 @@
 				<?php } }
                 else { ?> 
                 <div style="text-align:left">
-                        <h3>Test Cases Not Found!</h3>
+                        <h3>Cases Studies Not Found!</h3>
                 </div> <?php }?>
             </div>
         </div>

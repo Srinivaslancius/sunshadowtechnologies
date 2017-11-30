@@ -35,7 +35,12 @@
     
     
     <!--Gallery Section-->
-    
+<?php 
+  $id = $_GET['id'];
+  $getIndData = getDataFromTables('industries','0','id',$id,$activeStatus=NULL,$activeTop=NULL);
+  $getIndAllData  = $getIndData->fetch_assoc();
+  $getIndId = $getIndAllData['id'];
+?>  
 <section class="service white-bg page-section-ptb" style="margin-top:100px">
    <div class="container"> 
      <div class="row">
@@ -44,10 +49,10 @@
            <div class="service-nav">
              <ul>
             <?php 
-              $getIndustries = "SELECT * FROM industries WHERE status= 0"; 
+              $getIndustries = "SELECT * FROM industries WHERE status= 0 "; 
               $getIndustriesNames = $conn->query($getIndustries);
             ?> <?php while($getIndustriesAllNames = $getIndustriesNames->fetch_assoc()) { ?>
-               <li><a <?php if($getIndustriesAllNames['id']  == 1){ echo "class=active";} ?>  href="case_studies_details.php?id=<?php echo $getIndustriesAllNames['id'];?>"><?php echo $getIndustriesAllNames['title'];?></a></li>
+               <li><a <?php if($_GET['id'] == $getIndustriesAllNames['id']) { echo "class = active"; } ?>  href="case_studies_details.php?id=<?php echo $getIndustriesAllNames['id'];?>"><?php echo $getIndustriesAllNames['title'];?></a></li>
                <?php }?>
                
              </ul>
@@ -59,20 +64,16 @@
          <div class="service-block">
            <div class="row text-justify">
              <div class="col-lg-12 col-md-12">
-                <?php $sql = "SELECT * FROM industries WHERE status = 0 AND id = 1"; 
-                      $getIndName = $conn->query($sql);
-                      $getIndustryName = $getIndName->fetch_assoc();
-
-                ?>
-               <h4 class="mb-20" style="text-indent:10px"><strong><?php echo $getIndustryName['title'];?></strong></h4>
-               <p class="mb-20"><?php echo $getIndustryName['description'];?></p><br>
+               <h4 class="mb-20" style="text-indent:10px"><strong><?php echo $getIndAllData['title'];?></strong></h4>
+               <p class="mb-20"><?php echo $getIndAllData['description'];?></p><br>
                <div class="row">
-                <?php $getCaseStudies4 = "SELECT * FROM industry_case_studies WHERE industry_id = 6 AND status = 0";
-                      $getImgs4 = $conn->query($getCaseStudies4); 
+                <?php $getCaseStudies = "SELECT * FROM industry_case_studies WHERE industry_id = '$getIndId' AND status = 0";
+                      $getImgs = $conn->query($getCaseStudies); 
                 ?>
-                <?php while($row = $getImgs4->fetch_assoc()) { ?>
+                <?php while($row = $getImgs->fetch_assoc()) { ?>
                <div class="col-sm-4">
                <img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" class="img-responsive">
+               <h4><a href="test_cases.php?tid=<?php echo $getIndId;?>"><?php echo $row['title'];?></a></h4>
                </div>
                <?php }?>
                 
