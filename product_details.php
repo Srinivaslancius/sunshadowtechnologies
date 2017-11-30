@@ -63,15 +63,20 @@
 			       <div class="text"><?php echo substr(strip_tags($getItem['description']), 0,200);?></div>
 
              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top: 20px; background-color: #56529c; border: none">Place Order</button>
+             <style type="text/css">
+                  .modal-header .close {
+                      margin-top: -18px;
+                  }
+             </style>
      <form method="post" action="save_orders.php">
                               <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog" style="width: 50%;">
                                 
                                   <!-- Modal content-->
                                   <div class="modal-content">
                                     <div class="modal-header">
                                         
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <button type="button" class="close" style="font-size: 40px;" data-dismiss="modal">&times;</button>
                                       <h4 class="modal-title" style="color:black;text-align:center;">Place Order</h4>
                                     </div>
                                     
@@ -110,7 +115,7 @@
                                     </div>
                                     <div class="modal-footer">
 
-                                      <button type="submit" class="site-button" value="submit" name="submit">Submit</button>
+                                      <button type="submit" class="site-button" value="submit" style="background-color: lightblue;border: 1px solid white;padding: 10px;font-size: larger;" name="submit">Submit</button>
 
                                     </div>
                                   </div>
