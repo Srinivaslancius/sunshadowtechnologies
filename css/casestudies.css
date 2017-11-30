@@ -1,0 +1,78 @@
+.service .sidebar ul {
+    padding-left: 0px;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.service .sidebar ul li {
+    display: block;
+    list-style: none;
+    padding-left: 0px;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.service .sidebar ul li a {
+    display: block;
+    padding: 12px 25px;
+    color: #656565;
+    border: 1px solid #e6e6e6;
+    border-left: 3px solid rgba(0,0,0,0.1);
+    background: #fcfcf9;
+    text-transform: capitalize;
+	margin-bottom: 10px;
+}
+
+
+a, button, input {
+    outline: medium none !important;
+    color: #ffd200;
+}
+
+a, .btn {
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    color: #353535;
+}
+
+a {
+    color: #6ac610;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a:focus, a:hover {
+    color: #6ac610 !important;
+    text-decoration: none !important;
+}
+
+.service .sidebar ul li a:hover, .service .sidebar ul li a.active {
+   color: #6ac610 !important;
+    border-left-color: #6ac610 !important;
+}
+h4{
+	 color: #6ac610 !important;
+}
