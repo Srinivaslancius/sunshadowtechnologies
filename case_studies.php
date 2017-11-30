@@ -24,11 +24,14 @@
     
     
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/slides/4.jpg);">
+    <?php $getBanner = getAllDataCheckActive1('content_pages','0',29);
+    $getBannerImage = $getBanner->fetch_assoc(); ?>
+    <!--Page Title-->
+      <section class="page-title" style="background-image:url(<?php echo $base_url . 'uploads/content_images/'.$getBannerImage['image'] ?>);">
         <div class="auto-container">
             <div class="sec-title">
-                <h1>Our <span class="normal-font">Case Studies</span></h1>
-                <div class="bread-crumb"><a href="index.php">Home</a> / <a class="current">Case Studies</a></div>
+                <h1><span class="normal-font"><?php echo $getBannerImage['title'];?></span></h1>
+                <div class="bread-crumb"><a href="index.php">Home</a> / <a href="" class="current"><?php echo $getBannerImage['title'];?></a></div>
             </div>
         </div>
     </section>
