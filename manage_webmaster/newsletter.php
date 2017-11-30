@@ -1,5 +1,7 @@
 <?php include_once 'admin_includes/main_header.php'; ?>
-<?php $getServicesNewletter = getAllData('news_letter'); $i=1; ?>
+<?php $getServicesNewletter = "SELECT * FROM news_letter  ORDER BY  id DESC";
+      $getServicesNewletter1 = $conn->query($getServicesNewletter);
+      $i=1; ?>
      <div class="site-content">
         <div class="panel panel-default panel-table">
           <div class="panel-heading">
@@ -17,7 +19,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php while ($row = $getServicesNewletter->fetch_assoc()) { ?>
+                  <?php while ($row = $getServicesNewletter1->fetch_assoc()) { ?>
                   <tr>
                     <td><?php echo $i;?></td>
                     <td><?php echo $row['email'];?></td>
