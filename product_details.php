@@ -10,24 +10,7 @@
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <style>
-  .carousel {
-    margin-top: 20px;
-}
-.item .thumb {
-	width: 25%;
-	cursor: pointer;
-	float: left;
-}
-.item .thumb img {
-	width: 100%;
-	margin: 2px;
-}
-.item img {
-	width: 100%;	
-}
 
-  </style>
 </head>
 
 <body>
@@ -76,10 +59,10 @@
     </div> <!-- /col-sm-6 -->
     <div class="col-sm-6">
 	
-                <h2 style="font-size:25px"><b>PRODUCT<span class="normal-font theme_color"> DETAILS</span></b></h2><br>
+                <h2 style="font-size:25px"><b><?php echo $getItem['title']; ?><span class="normal-font theme_color"> </span></b></h2><br><h3>Rs. <?php echo $getItem['price']; ?></h3>
 			       <div class="text"><?php echo substr(strip_tags($getItem['description']), 0,200);?></div>
 
-             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top: 50px; background-color: #56529c; border: none">Place Order</button>
+             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top: 20px; background-color: #56529c; border: none">Place Order</button>
      <form method="post" action="save_orders.php">
                               <div class="modal fade" id="myModal" role="dialog">
                                 <div class="modal-dialog">
