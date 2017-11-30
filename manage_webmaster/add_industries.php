@@ -6,7 +6,6 @@ if (!isset($_POST['submit']))  {
  
   $title = $_POST['title'];
   $description = $_POST['description'];
-  $case_studies = $_POST['case_studies'];
   $fileToUpload = $_FILES["fileToUpload"]["name"];
   $status = $_POST['status'];
   
@@ -17,7 +16,7 @@ if (!isset($_POST['submit']))  {
 
                 //$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $sql = "INSERT INTO industries (`title`,`description`,`case_studies`,`image`,`status`) VALUES ('$title','$description','$case_studies','$fileToUpload','$status')"; 
+                    $sql = "INSERT INTO industries (`title`,`description`,`image`,`status`) VALUES ('$title','$description','$fileToUpload','$status')"; 
                   if($conn->query($sql) === TRUE){
                      echo "<script type='text/javascript'>window.location='industries.php?msg=success'</script>";
                   } else {
@@ -46,11 +45,6 @@ if (!isset($_POST['submit']))  {
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Description</label>
                     <textarea name="description" class="form-control" id="description" placeholder="Description" data-error="Please enter Description." required></textarea>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="form-control-2" class="control-label">Case Studies</label>
-                    <input type="text" class="form-control" id="form-control-2" name="case_studies" placeholder="Case Studies" data-error="Please enter case studies." required>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">

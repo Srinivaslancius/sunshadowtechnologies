@@ -7,7 +7,6 @@ $id = $_GET['uid'];
       
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $case_studies = $_POST['case_studies'];
         $status = $_POST['status'];
     
         
@@ -20,7 +19,7 @@ $id = $_GET['uid'];
               $getImgUnlink = getImageUnlink('image','content_pages','id',$id,$target_dir);
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-                 $sql = "UPDATE industries SET title ='$title',case_studies='$case_studies', description='$description', image='$fileToUpload', status='$status' WHERE id = '$id' ";
+                 $sql = "UPDATE industries SET title ='$title',description='$description', image='$fileToUpload', status='$status' WHERE id = '$id' ";
                   if($conn->query($sql) === TRUE){
 
                      echo "<script type='text/javascript'>window.location='industries.php?msg=success'</script>";
@@ -62,11 +61,6 @@ $id = $_GET['uid'];
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Description</label>
                     <textarea name="description" class="form-control" id="description" data-error="Please enter a valid email address." required><?php echo $getIndustries['description'];?></textarea>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="form-control-2" class="control-label">Case Studies</label>
-                    <input type="text" class="form-control" id="form-control-2" name="case_studies" required value="<?php echo $getIndustries['case_studies'];?>">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
