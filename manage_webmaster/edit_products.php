@@ -6,6 +6,7 @@ $id = $_GET['pid'];
     } else  {
             $status = $_POST['status'];
             $title = $_POST['title'];
+            $price = $_POST['price'];
             $description = $_POST['description'];
             if($_FILES["fileToUpload"]["name"]!='') {
               $fileToUpload = $_FILES["fileToUpload"]["name"];
@@ -15,7 +16,7 @@ $id = $_GET['pid'];
               $getImgUnlink = getImageUnlink('image','products','id',$id,$target_dir);
                 //Send parameters for img val,tablename,clause,id,imgpath for image ubnlink from folder
               if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $sql = "UPDATE products SET title = '$title',description='$description', image = '$fileToUpload', status='$status' WHERE id = '$id' ";
+                    $sql = "UPDATE products SET title = '$title',description='$description', price='$price',image = '$fileToUpload', status='$status' WHERE id = '$id' ";
                     if($conn->query($sql) === TRUE){
                        echo "<script type='text/javascript'>window.location='products.php?msg=success'</script>";
                     } else {
@@ -26,7 +27,7 @@ $id = $_GET['pid'];
                     echo "Sorry, there was an error uploading your file.";
                 }
             }  else {
-                $sql = "UPDATE products SET title = '$title',description='$description', status='$status' WHERE id = '$id' ";
+                $sql = "UPDATE products SET title = '$title',description='$description',price='$price', status='$status' WHERE id = '$id' ";
                 if($conn->query($sql) === TRUE){
                    echo "<script type='text/javascript'>window.location='products.php?msg=success'</script>";
                 } else {
@@ -49,6 +50,11 @@ $id = $_GET['pid'];
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Title</label>
                     <input type="text" class="form-control" id="form-control-2" name="title" required value="<?php echo $getProductsData['title'];?>">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-control-2" class="control-label">Price</label>
+                    <input type="text" class="form-control" id="form-control-2" name="price" required value="<?php echo $getProductsData['price'];?>">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">

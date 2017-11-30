@@ -6,6 +6,7 @@ if (!isset($_POST['submit']))  {
  
   $title = $_POST['title'];
   $description = $_POST['description'];
+  $price = $_POST['price'];
   $fileToUpload = $_FILES["fileToUpload"]["name"];
   $status = $_POST['status'];
   if($fileToUpload!='') {
@@ -14,7 +15,7 @@ if (!isset($_POST['submit']))  {
                 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $sql = "INSERT INTO products (`title`,`description`,`image`,`status`) VALUES ('$title','$description','$fileToUpload','$status')"; 
+                    $sql = "INSERT INTO products (`title`,`description`,`price`,`image`,`status`) VALUES ('$title','$description','$price','$fileToUpload','$status')"; 
                   if($conn->query($sql) === TRUE){
                      echo "<script type='text/javascript'>window.location='products.php?msg=success'</script>";
                   } else {
@@ -38,6 +39,11 @@ if (!isset($_POST['submit']))  {
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Title</label>
                     <input type="text" class="form-control" id="form-control-2" name="title" placeholder="Title" data-error="Please enter title." required>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-control-2" class="control-label">Price</label>
+                    <input type="text" class="form-control" id="form-control-2" name="price" placeholder="Price" data-error="Please enter Price." required>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
