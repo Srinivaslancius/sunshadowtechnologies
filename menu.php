@@ -67,7 +67,7 @@
                                <li class="active"><a href="features.php" <?php if($page_name == 'features.php') {  ?> class="check_page" <?php } ?>>Features</a>
                                  
                                 </li>
-                               <li class="active"><a href="industries.php" <?php if($page_name == 'industries.php') {  ?> class="check_page" <?php } ?>>Industries</a>
+                               <li class="active"><a href="industries.php" <?php if($page_name == 'industries.php' || $page_name == 'industries_details.php') {  ?> class="check_page" <?php } ?>>Industries</a>
                                  
                                 </li>
                                <li class="active"><a href="case_studies.php" <?php if($page_name == 'case_studies.php') {  ?> class="check_page" <?php } ?>>Case Studies</a>
@@ -76,7 +76,7 @@
                                <li class="active"><a href="technical_info.php" <?php if($page_name == 'technical_info.php') {  ?> class="check_page" <?php } ?>>Technical Info</a>
                                  
                                 </li>
-                                <li class="active"><a href="products.php" <?php if($page_name == 'products.php') {  ?> class="check_page" <?php } ?>>Products</a>
+                                <li class="active"><a href="products.php" <?php if($page_name == 'products.php' || $page_name == 'product_details.php') {  ?> class="check_page" <?php } ?>>Products</a>
                                 
                                 </li>
                                 <li class="active"><a href="downloads.php" <?php if($page_name == 'downloads.php') {  ?> class="check_page" <?php } ?>>Downloads</a></li>
