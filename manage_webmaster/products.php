@@ -18,6 +18,7 @@
                     <th>S.No</th>
                     <th>Title</th>
                     <th>Description</th>
+                    <th>Price</th>
                     <th>Image</th>
                     <th>Status</th>
                     <th>Actions</th>
@@ -29,6 +30,7 @@
                     <td><?php echo $i;?></td>
                     <td><?php echo $row['title'];?></td>
                     <td><?php echo substr(strip_tags($row['description']), 0,150);?></td>
+                    <td><?php echo $row['price'];?></td>
                      <td><img src="<?php echo $base_url . 'uploads/product_images/'.$row['image'] ?>" height="100" width="100"/></td>                   
                     <td><?php if ($row['status']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['status']." data-tbname='products
                     '>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['status']." data-incId=".$row['id']." data-tbname='products'>In Active</span>" ;} ?></td>

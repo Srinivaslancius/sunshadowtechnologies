@@ -118,6 +118,11 @@
                                             <input type="text" readonly class="form-control" name="title" value="<?php echo $getPro['title'];?>" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
+                                        <lable>Product Price</label>
+                                        <div class="form-group">
+                                            <input type="text" readonly class="form-control" name="price" value="<?php echo $getPro['price'];?>" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
                 
                                     </div>
                                     <div class="modal-footer">

@@ -72,7 +72,7 @@
               </figure>
 					    <div class="post">
 						    <h4><b><?php echo $Products['title']; ?></b></h4> 
-						    <p>₹ 250.00</p> 
+						    <p><?php echo $Products['price']; ?></p> 
 					    </div>
 					</div>
           </div>
