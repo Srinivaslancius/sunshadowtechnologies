@@ -88,7 +88,7 @@ if (!isset($_POST['newsletter']))  {
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         
                             <!--Footer Column-->
-                            <?php $getAllNewsData ="SELECT * FROM news  WHERE status=0 LIMIT 2 "; 
+                            <?php $getAllNewsData ="SELECT * FROM news  WHERE status=0 ORDER BY id DESC LIMIT 1,2 "; 
                             $getNewsData = $conn->query($getAllNewsData);
                             ?>
                                 <div class="footer-widget news-widget">
