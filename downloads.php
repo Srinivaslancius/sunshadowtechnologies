@@ -72,7 +72,8 @@ $getAllcategoriesData = $conn->query($getCategoriesData);
                 <?php 
                 $getCatId = $getCategories['id'];
                 $getDownloadsData = "SELECT * FROM downloads WHERE  category_id='$getCatId' AND status=0";
-                $getAllDownloadsData = $conn->query($getDownloadsData); 
+                $getAllDownloadsData = $conn->query($getDownloadsData);
+                if($getAllDownloadsData->num_rows > 0) { 
                 while($getDownloads = $getAllDownloadsData->fetch_assoc()) {
                 ?>
                 <div class="column blog-news-column col-lg-2 col-md-6 col-sm-6 col-xs-12">
@@ -88,14 +89,17 @@ $getAllcategoriesData = $conn->query($getCategoriesData);
                         </div>
                     </article>
                 </div>
-                <?php } ?>			
+                <?php } } else { ?>
+                <div style="text-align:left">
+                    <h3 style="text-align:center;">Downloads Not Found!</h3></br>
+                </div> <?php }?>			
             </div>
         </div>
         <?php } ?>
             <!-- Styled Pagination -->    
         </div>
     </section>
-     <section class="blog-news-section latest-news" style="margin-top:-150px">
+     <section class="blog-news-section latest-news" style="margin-top:-100px">
     	<?php include_once 'our_clients.php';?>
     </section>	
     <!--Sponsors Section-->
