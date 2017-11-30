@@ -11,7 +11,7 @@
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <article class="inner-box">
                         <figure class="image-box">
-                            <a href="#"><img style="width:500px;height:200px;" src="<?php echo $base_url . 'uploads/news_images/'.$row['banner'] ?>" alt=""></a>
+                            <a href="news.php?nid=<?php echo $row['id'];?>"><img style="width:500px;height:200px;" src="<?php echo $base_url . 'uploads/news_images/'.$row['banner'] ?>" alt=""></a>
                         </figure>
                         <div class="content-box">
                             <h3 style="text-align:left"><a href="news.php?nid=<?php echo $row['id'];?>"><?php echo $row['title']; ?></a></h3>
