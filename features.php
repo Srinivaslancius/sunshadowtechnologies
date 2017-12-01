@@ -36,7 +36,7 @@
     
     
     <!--Projects Section-->
-    <section class="projects-section">
+    <section class="projects-section" style="margin-bottom:-100px">
     	<div class="auto-container">
             
         	<div class="row clearfix">
@@ -80,7 +80,7 @@
         </div>
     </section>
     
-     <section class="blog-news-section latest-news" style="margin-top:-150px">
+     <section class="blog-news-section latest-news">
     	<?php include_once 'our_clients.php';?>
     </section>	
     <!--Sponsors Section-->
