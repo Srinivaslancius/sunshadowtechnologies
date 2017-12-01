@@ -48,7 +48,7 @@ if (!isset($_POST['submit']))  {
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
-                    <label for="form-control-4" class="control-label">Banner</label>
+                    <label for="form-control-4" class="control-label">Image</label>
                     <img id="output" height="100" width="100"/>
                     <label class="btn btn-default file-upload-btn">
                       Choose file...

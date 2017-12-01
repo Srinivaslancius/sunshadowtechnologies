@@ -16,7 +16,7 @@
                         <div class="content-box">
                             <h3 style="text-align:left"><a href="news.php?nid=<?php echo $row['id'];?>"><?php echo $row['title']; ?></a></h3>
                         <!--    <div class="column-info">13-14 Feb in Sanfransico, CA</div>-->
-                            <div class="text"><?php echo substr(strip_tags($row['description']), 0,200);?> </div>
+                            <div class="text"><?php echo substr(strip_tags($row['description']), 0,150);?> </div>
                             <a href="news.php?nid=<?php echo $row['id'];?>" class="theme-btn btn-style-three">Read More</a>
                         </div>
                     </article>
