@@ -76,7 +76,7 @@
 						    <h4><b><?php echo $Products['title']; ?></b></h4> 
 						    <p><?php echo $Products['price']; ?></p> 
 					    </div>
-					</div>
+					</div><br/>
           </div>
           <?php } ?>
 				</div>
