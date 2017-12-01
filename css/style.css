@@ -4656,3 +4656,51 @@ td{
 .glyphicon{
 	color:#6ac610 !important;
 }
+@media only screen and (max-width: 480px){
+.default-featured-column .content-box .text{
+	margin: 10px !important;
+}
+.team-section .team-member h3 {
+	text-align:center !important;
+}
+.team-section .team-member .designation{
+	text-align:center !important;
+}
+.default-featured-column h3 a {
+	margin-left:10px !important;
+}
+.btn-style-three{
+	margin-left:10px !important;
+}
+h3{
+	margin-left:10px !important;
+}
+.main-features .title-box .text{
+	margin-left:10px !important;
+	margin-right:10px !important;
+}
+.default-featured-column .image-box img{
+	margin-right:20px !important;
+}
+.main-footer .footer-upper{
+	padding: 70px 30px 30px !important;
+}
+.default-icon-column .text{
+	margin-left:10px !important;
+}
+.default-icon-column .icon-box{
+	margin-left:10px !important;
+}
+.card{
+	margin-left:30px !important;
+}
+.faqs-section{
+	padding: 90px 10px 80px !important;
+}
+.default-section {
+	padding: 90px 10px 40px !important;
+}
+.featured-fluid-section .dark-column .text{
+	text-align:justify !important;
+}
+}
