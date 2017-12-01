@@ -185,7 +185,7 @@ if(mail($to,$subject,$message,$headers)) {
                                 </div>
                                 <!--Form Group-->
                                 <div class="form-group col-md-6 col-xs-12">
-                                    <input type="text" name="email_contact" value="" placeholder="Your Email" required>
+                                    <input type="email" name="email_contact" value="" placeholder="Your Email" required>
                                 </div>
                                  <div class="form-group col-md-12 col-xs-12">
                                     <input type="text" name="text" value="" placeholder="Subject" required>
