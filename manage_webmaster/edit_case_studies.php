@@ -35,7 +35,7 @@ if (!isset($_POST['submit']))  {
                     echo "Sorry, there was an error uploading your file.";
                 }
             }  else {
-                $sql1 = "UPDATE `industry_case_studies` SET industry_id = '$industry_id',title = '$title',description = '$description',status='$status' WHERE id = '$id' ";
+                $sql1 = "UPDATE `industry_case_studies` SET industry_id = '$industry_id',title = '$title',status='$status' WHERE id = '$id' ";
                 if($conn->query($sql1) === TRUE){
                    echo "Record updated successfully";
                 } else {
