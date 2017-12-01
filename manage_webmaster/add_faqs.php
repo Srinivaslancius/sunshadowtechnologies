@@ -32,7 +32,7 @@
                   
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Question</label>
-                    <textarea name="question" class="form-control" id="question" placeholder="Question" data-error="Please enter Question." required></textarea>
+                    <textarea name="question" class="form-control" placeholder="Question" data-error="Please enter Question." required></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
@@ -64,6 +64,5 @@
       <script src="js/tables-datatables.min.js"></script>
       <script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
 <script>
-CKEDITOR.replace( 'question' );
     CKEDITOR.replace( 'answer' );
 </script>

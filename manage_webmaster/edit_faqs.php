@@ -31,7 +31,7 @@ $id = $_GET['uid'];
                   
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Question</label>
-                    <textarea name="question" class="form-control" id="question" data-error="Please enter Question." required><?php echo $getFaqs1['question'];?></textarea>
+                    <textarea name="question" class="form-control"  data-error="Please enter Question." required><?php echo $getFaqs1['question'];?></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
@@ -63,7 +63,6 @@ $id = $_GET['uid'];
 <!-- <script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script> -->
 <script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace( 'question' );
     CKEDITOR.replace( 'answer' ); 
 </script>
 <style type="text/css">
