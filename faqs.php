@@ -36,7 +36,7 @@
     
     
     <!--404 Section-->
-    <section class="faqs-section">
+    <section class="faqs-section" style="margin-bottom:-100px;">
     	<div class="auto-container">
         	<div class="sec-title text-center small-container padd-bott-30">
             	<h3 class="bigger-text">EVERYTHING YOU NEED TO KNOW ABOUT THIS <span class="normal-font theme_color"> NCK GULF</span></h3>
