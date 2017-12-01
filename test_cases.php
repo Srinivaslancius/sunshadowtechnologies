@@ -58,7 +58,7 @@
 				<?php } }
                 else { ?> 
                 <div style="text-align:left">
-                        <h3>Test Cases Not Found!</h3>
+                        <h3>Case Studies Not Found!</h3>
                 </div> <?php }?>
             </div>
         </div>
