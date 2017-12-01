@@ -59,7 +59,7 @@
                 <?php while($getIndustriesAllData  = $getIndustriesData->fetch_assoc()){ ?>
                         <figure class="image-box">
 
-                        <div class="text">Case Studie PDF: <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><?php echo $getIndustriesAllData['pdf_image']; ?></a></div>
+                        <div class="text" style="text-indent:8px;">Case Studies PDF: <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getIndustriesAllData['pdf_image'] ?>" target="_blank"><?php echo $getIndustriesAllData['pdf_image']; ?></a></div>
                         </figure>
                         <?php } }
                         else { ?> 
