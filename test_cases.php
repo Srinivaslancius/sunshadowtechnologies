@@ -54,7 +54,7 @@
                 ?>
                 <?php if($getPdfsImgs->num_rows > 0) { ?>
                 <?php while($getPdfData = $getPdfsImgs->fetch_assoc()) { ?>
-				<div class="text">Case Studie PDF: <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getPdfData['industry_pdfs'] ?>" target="_blank"><?php echo $getPdfData['industry_pdfs']; ?></a></div>
+				<div class="text" style="text-indent:8px;">Case Studie PDF: <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getPdfData['industry_pdfs'] ?>" target="_blank"><?php echo $getPdfData['industry_pdfs']; ?></a></div>
 				<?php } }
                 else { ?> 
                 <div style="text-align:left">
