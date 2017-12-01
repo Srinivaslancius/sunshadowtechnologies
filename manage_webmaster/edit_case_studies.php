@@ -116,7 +116,7 @@ if (!isset($_POST['submit']))  {
                         <?php if($getImages->num_rows > 0){ ?>
                           <input name="product_images[]" accept=".pdf,.doc" type="file" id="file" />
                          <?php } else { ?>
-                          <input name="product_images[]" accept=".pdf,.doc" type="file" id="file" required/>
+                          <input name="product_images[]" accept=".pdf,.doc" type="file" id="file"/>
                          <?php } ?>
 
                       </div><br/>               
