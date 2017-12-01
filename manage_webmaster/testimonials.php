@@ -3,8 +3,8 @@
       <div class="site-content">
         <div class="panel panel-default panel-table">
           <div class="panel-heading">
-            <a href="add_testimonials.php" style="float:right">Add Testimonials</a>
-            <h3 class="m-t-0 m-b-5">Testimonials</h3>
+            <a href="add_testimonials.php" style="float:right">Add Our Team</a>
+            <h3 class="m-t-0 m-b-5">Our Team</h3>
           </div>
           <div class="panel-body">
             <div class="table-responsive">
