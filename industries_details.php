@@ -46,7 +46,7 @@
         //$getIndustriesAllData  = $getIndustriesData->fetch_assoc();
     ?>
     <!--Main Features-->
-    <section class="main-features">
+    <section class="main-features" style="margin-bottom:-100px">
     	<div class="auto-container">
      <div class="title-box">
             	<!--<h1>Services</h1>-->
@@ -64,18 +64,17 @@
                         <?php } }
                         else { ?> 
                         <div style="text-align:left">
-                                <h3>PDF Files Not Found!</h3>
+                                <h3 style="text-indent:8px;">PDF Files Not Found!</h3>
                         </div> <?php }?>
                         <div class="content-box">
                             <h4 style="font-size:15px; text-align:center"><a href="#"><?php echo $getIndustriesAllData['title']; ?></a></h4>
                             
-                          
                         </div>
             </article>    
 	</div>
         </div>
     </section>
-     <section class="blog-news-section latest-news" style="margin-top:-150px">
+     <section class="blog-news-section latest-news">
     	<?php include_once 'our_clients.php';?>
     </section>	
     <!--Sponsors Section-->
