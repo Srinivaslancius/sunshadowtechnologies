@@ -43,7 +43,7 @@
                 <!--Column-->
                 <div class="column default-text-column col-md-12 col-sm-12 col-xs-12">
                     <div class="text-block">
-                        <?php echo $getData['description'];?>
+                        <?php echo $getTechnical['description'];?>
                         
                     </div>
                 

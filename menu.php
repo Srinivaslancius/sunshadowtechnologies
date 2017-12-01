@@ -70,7 +70,7 @@
                                <li class="active"><a href="industries.php" <?php if($page_name == 'industries.php' || $page_name == 'industries_details.php') {  ?> class="check_page" <?php } ?>>Industries</a>
                                  
                                 </li>
-                               <li class="active"><a href="case_studies.php" <?php if($page_name == 'case_studies.php') {  ?> class="check_page" <?php } ?>>Case Studies</a>
+                               <li class="active"><a href="case_studies.php" <?php if($page_name == 'case_studies.php' || $page_name == 'case_studies_details.php') {  ?> class="check_page" <?php } ?>>Case Studies</a>
                                   
                                 </li>
                                <li class="active"><a href="technical_info.php" <?php if($page_name == 'technical_info.php') {  ?> class="check_page" <?php } ?>>Technical Info</a>

@@ -10,7 +10,6 @@ if (!isset($_POST['submit']))  {
     
     $industry_id = $_POST['industry_id'];
     $title= $_POST['title'];
-    $description = $_POST['description'];
     $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
     $status = $_POST['status'];
     $created_at = date("Y-m-d h:i:s");
@@ -25,7 +24,7 @@ if (!isset($_POST['submit']))  {
               $getImgUnlink = getImageUnlink('image','industry_case_studies','id',$id,$target_dir);
                 //Send parameters for img val,tablename,clause,id,imgpath for image ubnlink from folder
               if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $sql1 = "UPDATE `industry_case_studies` SET industry_id = '$industry_id',title = '$title',description = '$description',image = '$fileToUpload',status='$status' WHERE id = '$id' ";
+                    $sql1 = "UPDATE `industry_case_studies` SET industry_id = '$industry_id',title = '$title',image = '$fileToUpload',status='$status' WHERE id = '$id' ";
                     if($conn->query($sql1) === TRUE){
                        echo "Record updated successfully";
                     } else {
@@ -54,7 +53,7 @@ if (!isset($_POST['submit']))  {
         $file_destination = '../uploads/case_studies_pdfs/' . $product_images1;
         if($product_images1!=''){
             move_uploaded_file($file_tmp, $file_destination);        
-            $sql = "INSERT INTO industry_pdfs ( `industry_id`,`industry_pdfs`) VALUES ('$id','$product_images1')";
+            $sql = "INSERT INTO industry_pdfs ( `industry_id` ,`casestudy_id`,`industry_pdfs`) VALUES ('$industry_id','$id','$product_images1')";
             $result = $conn->query($sql);
         }        
     }
@@ -102,16 +101,11 @@ if (!isset($_POST['submit']))  {
                       </label>
                   </div>Image
                   <div class="form-group">
-                    <label for="form-control-2" class="control-label">Description</label>
-                    <textarea name="description" class="form-control" id="description" data-error="Please enter a valid email address." required><?php echo $getProducts['description'];?></textarea>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                  <div class="form-group">
                       <?php  $pid = $_GET['pid'];                                                           
-                      $sql = "SELECT id,industry_pdfs FROM industry_pdfs where industry_id = '$pid' ";
+                      $sql = "SELECT id,industry_pdfs FROM industry_pdfs where casestudy_id = '$pid' ";
                       $getImages= $conn->query($sql);                                                             
                       while($row=$getImages->fetch_assoc()) {
-                          echo "<input type='text' value='".$row['industry_pdfs']."' class='ajax_img_del' />&nbsp;&nbsp;<a style='cursor:pointer' class='ajax_img_del' id=".$row['id'].">Delete</a></br></br>";
+                          echo "<input type='text' readonly value='".$row['industry_pdfs']."'/>&nbsp;&nbsp;<a style='cursor:pointer' class='ajax_img_del' id=".$row['id'].">Delete</a></br></br>";
                       }                               
                      ?>
                   </div>

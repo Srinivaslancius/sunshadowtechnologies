@@ -34,10 +34,13 @@
         </div>
     </section>
     
-    <?php $id = $_GET['tid']; ?>
+    <?php $casestudyid = $_GET['csid']; 
+        $industryid = $_GET['indid'];
+
+    ?>
     <!--Main Features-->
     <section class="main-features">
-        <?php $getIndustries = "SELECT * FROM industries WHERE id = '$id' AND status = 0";
+        <?php $getIndustries = "SELECT * FROM industries WHERE id = '$industryid' AND status = 0";
               $getIndNames = $conn->query($getIndustries);
         ?>
     	<div class="auto-container">
@@ -46,7 +49,7 @@
             	<!--<h1>Services</h1>-->
            	<h3><b><?php echo $getIndNames1['title'];?><span class="normal-font theme_color">&nbsp;CASE STUDIES</span></b></h3><br>
                 <div class="text"><?php echo $getIndNames1['description'];?></div>
-                <?php $getId = $getIndNames1['id']; $getPdfs = "SELECT * FROM industry_pdfs WHERE industry_id =  '$getId' ";
+                <?php $getId = $getIndNames1['id']; $getPdfs = "SELECT * FROM industry_pdfs WHERE casestudy_id =  '$casestudyid' AND industry_id =  '$industryid'";
                       $getPdfsImgs = $conn->query($getPdfs);
                 ?>
                 <?php if($getPdfsImgs->num_rows > 0) { ?>
@@ -55,16 +58,10 @@
 				<?php } }
                 else { ?> 
                 <div style="text-align:left">
-                        <h3>Cases Studies Not Found!</h3>
+                        <h3>Test Cases Not Found!</h3>
                 </div> <?php }?>
             </div>
         </div>
-    </section>
-	 <section class="recent-projects" style="margin-top:-100px">
-    	<?php include_once 'sample_heading.php';?>
-    </section>
-     <section class="events-section latest-events" style="margin-top:-100px">
-    	<?php include_once 'latest_news.php';?>
     </section>
      <section class="blog-news-section latest-news" style="margin-top:-150px">
     	<?php include_once 'our_clients.php';?>

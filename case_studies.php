@@ -70,15 +70,16 @@
                <h4 class="mb-20" style="text-indent:10px"><strong><?php echo $getIndustryName['title'];?></strong></h4>
                <p class="mb-20"><?php echo $getIndustryName['description'];?></p><br>
                <div class="row">
-                <?php $getCaseStudies4 = "SELECT * FROM industry_case_studies WHERE industry_id = 6 AND status = 0";
+                <?php $getCaseStudies4 = "SELECT * FROM industry_case_studies WHERE industry_id = 1 AND status = 0 limit 0,3";
                       $getImgs4 = $conn->query($getCaseStudies4); 
                 ?>
                 <?php while($row = $getImgs4->fetch_assoc()) { ?>
                <div class="col-sm-4">
                <img src="<?php echo $base_url . 'uploads/inustries_case_studies_images/'.$row['image'] ?>" class="img-responsive">
+               <h4><a style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;display: block;font-size: 12px;" href="test_cases.php?csid=<?php echo $row['id'];?>&indid=<?php echo $row['industry_id'];?>"><?php echo $row['title'];?></a></h4></br>
                </div>
                <?php }?>
-                
+               </div>
                </div>
              </div>
            </div>
@@ -89,10 +90,7 @@
    </div>
 </section>
         
-    <section class="events-section latest-events">
-        <?php include_once 'latest_news.php';?>
-    </section>
-     <section class="blog-news-section latest-news" style="margin-top:-150px">
+     <section class="blog-news-section latest-news">
         <?php include_once 'our_clients.php';?>
     </section>  
     <!--Sponsors Section-->

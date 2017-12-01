@@ -8,7 +8,6 @@ if (!isset($_POST['submit']))  {
   //echo "<pre>";print_r($_POST); exit;
     $industry_id = $_POST['industry_id'];
     $title= $_POST['title'];
-    $description = $_POST['description'];
     $fileToUpload = uniqid().$_FILES["fileToUpload"]["name"];
     $status = $_POST['status'];
     $created_at = date("Y-m-d h:i:s");
@@ -22,7 +21,7 @@ if (!isset($_POST['submit']))  {
                 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $sql1 = "INSERT INTO industry_case_studies (`industry_id`,`title`,`description`,`image`,`created_at`,`status`) VALUES ('$industry_id','$title','$description','$fileToUpload','$created_at','$status')";
+                    $sql1 = "INSERT INTO industry_case_studies (`industry_id`,`title`,`image`,`created_at`,`status`) VALUES ('$industry_id','$title','$fileToUpload','$created_at','$status')";
                     $result1 = $conn->query($sql1);
                     $last_id = $conn->insert_id;
                 } else {
@@ -30,18 +29,17 @@ if (!isset($_POST['submit']))  {
                 }
             }
 
-            
             $product_images = $_FILES['product_images']['name'];
             foreach($product_images as $key=>$value){
                 $product_images1 = $_FILES['product_images']['name'][$key];
                 $file_tmp = $_FILES["product_images"]["tmp_name"][$key];
                 $file_destination = '../uploads/case_studies_pdfs/' . $product_images1;
                 move_uploaded_file($file_tmp, $file_destination);        
-                $sql = "INSERT INTO industry_pdfs ( `industry_id`,`industry_pdfs`) VALUES ('$last_id','$product_images1')";
+                $sql = "INSERT INTO industry_pdfs (`industry_id`, `casestudy_id`,`industry_pdfs`) VALUES ('$industry_id','$last_id','$product_images1')"; 
                 $result = $conn->query($sql);
             }
 
-            if( $result1 == 1){
+            if( $result == 1){
             echo "<script type='text/javascript'>window.location='case_studies.php?msg=success'</script>";
             } else {
                echo "<script type='text/javascript'>window.location='case_studies.php?msg=fail'</script>";
@@ -83,17 +81,11 @@ if (!isset($_POST['submit']))  {
                       </label>
                   </div>
                   <div class="form-group">
-                    <label for="form-control-2" class="control-label">Description</label>
-                    <textarea name="description" class="form-control" id="description" placeholder="Description" data-error="Please enter Description." required></textarea>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                  
-                  <div class="form-group">
                     <label for="form-control-4" class="control-label">Pdfs</label>
                     
                     <label class="btn btn-default file-upload-btn">
                     Choose file...
-                          <input id="product_images" class="file-upload-input" type="file" accept=".pdf,.doc" name="product_images[]" id="product_images"    multiple="multiple" required >
+                          <input id="product_images" class="file-upload-input" type="file" accept=".pdf,.doc" name="product_images[]"     multiple="multiple" required >
                       </label>
                       <!-- <a style="cursor:pointer" id="add_more" class="add_field_button">Add More Fields</a> -->
                   </div>
@@ -138,27 +130,3 @@ if (!isset($_POST['submit']))  {
         border: 1px solid #333;
     }
 </style>
-
-
-
-
-
-				          
-
-				          
-
-                  
-
-      
-       
-
-      
-      
-
-      
-
-
-
-
-
-
