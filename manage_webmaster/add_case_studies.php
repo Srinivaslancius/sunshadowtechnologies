@@ -28,17 +28,19 @@ if (!isset($_POST['submit']))  {
                         echo "Sorry, there was an error uploading your file.";
                 }
             }
-
             $product_images = $_FILES['product_images']['name'];
-            foreach($product_images as $key=>$value){
-                $product_images1 = $_FILES['product_images']['name'][$key];
-                $file_tmp = $_FILES["product_images"]["tmp_name"][$key];
-                $file_destination = '../uploads/case_studies_pdfs/' . $product_images1;
-                move_uploaded_file($file_tmp, $file_destination);        
-                $sql = "INSERT INTO industry_pdfs (`industry_id`, `casestudy_id`,`industry_pdfs`) VALUES ('$industry_id','$last_id','$product_images1')"; 
-                $result = $conn->query($sql);
-            }
-
+            
+              foreach($product_images as $key=>$value){
+                  $product_images1 = $_FILES['product_images']['name'][$key];
+                  if($product_images1!=''){
+                  $file_tmp = $_FILES["product_images"]["tmp_name"][$key];
+                  $file_destination = '../uploads/case_studies_pdfs/' . $product_images1;
+                  move_uploaded_file($file_tmp, $file_destination);        
+                  $sql = "INSERT INTO industry_pdfs (`industry_id`, `casestudy_id`,`industry_pdfs`) VALUES ('$industry_id','$last_id','$product_images1')"; 
+                  $result = $conn->query($sql);
+                }
+              }
+            
             if( $result == 1){
             echo "<script type='text/javascript'>window.location='case_studies.php?msg=success'</script>";
             } else {

@@ -39,7 +39,7 @@
 
     ?>
     <!--Main Features-->
-    <section class="main-features">
+    <section class="main-features" style="margin-bottom:-120px">
         <?php $getIndustries = "SELECT * FROM industries WHERE id = '$industryid' AND status = 0";
               $getIndNames = $conn->query($getIndustries);
         ?>
@@ -54,16 +54,16 @@
                 ?>
                 <?php if($getPdfsImgs->num_rows > 0) { ?>
                 <?php while($getPdfData = $getPdfsImgs->fetch_assoc()) { ?>
-				<div class="text" style="text-indent:8px;">Case Studie PDF: <a href="<?php echo $base_url . 'uploads/indusrty_pdf_images/'.$getPdfData['industry_pdfs'] ?>" target="_blank"><?php echo $getPdfData['industry_pdfs']; ?></a></div>
+				<div class="text"  style="text-indent:8px;">Case Studie PDF: <a href="<?php echo $base_url . 'uploads/case_studies_pdfs/'.$getPdfData['industry_pdfs'] ?>" target="_blank"><?php echo $getPdfData['industry_pdfs']; ?></a></div>
 				<?php } }
                 else { ?> 
                 <div style="text-align:left">
-                        <h3>Case Studies Not Found!</h3>
+                        <h3 style="text-indent:8px;">Case Studies Not Found!</h3>
                 </div> <?php }?>
             </div>
         </div>
     </section>
-     <section class="blog-news-section latest-news" style="margin-top:-150px">
+     <section class="blog-news-section latest-news" >
     	<?php include_once 'our_clients.php';?>
     </section>	
     <!--Sponsors Section-->
