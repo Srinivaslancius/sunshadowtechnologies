@@ -77,7 +77,7 @@ if (!isset($_POST['submit']))  {
                     <img id="output" height="100" width="100"/>
                     <label class="btn btn-default file-upload-btn">
                       Choose file...
-                        <input id="form-control-22" class="file-upload-input" type="file" accept="image/*" name="fileToUpload" id="fileToUpload"  onchange="loadFile(event)"  multiple="multiple" required >
+                        <input id="form-control-22" class="file-upload-input" type="file" accept="image/*" name="fileToUpload" id="fileToUpload"   multiple="multiple" required >
                       </label>
                   </div>
                   <div class="form-group">
