@@ -100,7 +100,7 @@ if (!isset($_POST['submit']))  {
                         Choose file...
                         <input id="form-control-22" class="file-upload-input" type="file" accept="image/*" name="fileToUpload" id="fileToUpload"  onchange="loadFile(event)"  multiple="multiple" >
                       </label>
-                  </div>Image
+                  </div>
                   <div class="form-group">
                       <?php  $pid = $_GET['pid'];                                                           
                       $sql = "SELECT id,industry_pdfs FROM industry_pdfs where casestudy_id = '$pid' ";
@@ -110,7 +110,7 @@ if (!isset($_POST['submit']))  {
                       }                               
                      ?>
                   </div>
-
+                  
                   <div id="formdiv">                   
                       <div id="filediv">
                         <?php if($getImages->num_rows > 0){ ?>
@@ -135,7 +135,7 @@ if (!isset($_POST['submit']))  {
                     <div class="help-block with-errors"></div>
                   </div>
 
-                  <button type="submit" name="submit" value="Submit"  class="btn btn-primary btn-block">Submit</button>
+                  <button type="submit" name="submit" value="Submit" id="submit" class="btn btn-primary btn-block">Submit</button>
                 </form>
               </div>
             </div>
